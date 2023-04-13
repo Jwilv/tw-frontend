@@ -7,9 +7,12 @@ export const Registerpage = () => {
     const initialState = {
         email: "",
         password: "",
+        passwordConfirm:"",
+        name:"",
+
     }
     const [values, changeForm, reset] = useForm(initialState)
-    const { email, password } = values
+    const { email, password, passwordConfirm, name} = values
     console.log(values)
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -19,7 +22,7 @@ export const Registerpage = () => {
         <div className='container-login-logout'>
 
             <div className="form-container">
-                <p className="title">Login</p>
+                <p className="title">Register</p>
                 <form
                     className="form"
                     onSubmit={handleSubmit}>
@@ -46,6 +49,7 @@ export const Registerpage = () => {
                         <input
                             type="password"
                             name="password"
+                            autoComplete='off'
                             value={password}
                             onChange={changeForm}
                         />
@@ -55,6 +59,7 @@ export const Registerpage = () => {
                         <input
                             type="password"
                             name="passwordConfirm"
+                            autoComplete='off'
                             value={passwordConfirm}
                             onChange={changeForm}
                         />
@@ -62,10 +67,10 @@ export const Registerpage = () => {
                     <button
                         className="sign"
                         type='submit'
-                    >Sign in</button>
+                    >Sign up</button>
                 </form>
-                <p className="signup">Don't have an account?
-                    <a rel="noopener noreferrer" href="#" className=""> Sign up</a>
+                <p className="signup">you have an account ?
+                    <a rel="noopener noreferrer" href="#" className=""> Sign in</a>
                 </p>
             </div>
         </div>
