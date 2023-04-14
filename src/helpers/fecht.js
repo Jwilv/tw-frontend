@@ -1,5 +1,5 @@
 
-const baseUrl = ""
+const baseUrl = import.meta.env.VITE_APP_URL_API
 
 export const fetchWithoToken = async (endpoint, data, method = "GET") => {
     const url = `${baseUrl}/${endpoint}`
