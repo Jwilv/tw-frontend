@@ -1,6 +1,7 @@
 import React from 'react'
 import "../scss/index.scss"
 import { useForm } from '../hooks/useForm'
+import Swal from 'sweetalert2'
 
 export const LoginPage = () => {
 
@@ -13,7 +14,9 @@ export const LoginPage = () => {
     console.log(values)
     const handleSubmit = (event)=>{
         event.preventDefault()
-        
+        if (password.length < 6 ){
+            return Swal.fire("Error","la contraseña debe ser de minimo 6 caracteres","error")
+        }
     }
     return (
         <div className='container-login-logout'>

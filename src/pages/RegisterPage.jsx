@@ -1,6 +1,7 @@
 import React from 'react'
 import "../scss/index.scss"
 import { useForm } from '../hooks/useForm'
+import Swal from 'sweetalert2'
 
 export const Registerpage = () => {
 
@@ -16,6 +17,16 @@ export const Registerpage = () => {
     console.log(values)
     const handleSubmit = (event) => {
         event.preventDefault()
+        if (password.length < 6 ){
+            return Swal.fire("Error","la contraseña debe ser de minimo 6 caracteres","error")
+        }
+        if(password !== password){
+            return Swal.fire("Error","las contraseñas deben ser iguales","error")
+        }
+
+        if (name.length < 4 ){
+            return Swal.fire("Error","el nombre debe ser de minimo 4 caracteres","error")
+        }
 
     }
     return (
