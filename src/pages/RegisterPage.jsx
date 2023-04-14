@@ -20,7 +20,7 @@ export const Registerpage = () => {
         if (password.length < 6 ){
             return Swal.fire("Error","la contraseña debe ser de minimo 6 caracteres","error")
         }
-        if(password !== password){
+        if(password !== passwordConfirm){
             return Swal.fire("Error","las contraseñas deben ser iguales","error")
         }
 
