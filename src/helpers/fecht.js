@@ -1,5 +1,7 @@
 
-const baseUrl = import.meta.env.VITE_APP_URL_API
+// const baseUrl = import.meta.env.VITE_APP_URL_API
+const baseUrl = "http://localhost:8080"
+
 
 export const fetchWithoToken = async (endpoint, data, method = "GET") => {
     const url = `${baseUrl}/${endpoint}`

@@ -2,30 +2,38 @@ import React from 'react'
 import "../scss/index.scss"
 import { useForm } from '../hooks/useForm'
 import Swal from 'sweetalert2'
+import {  fetchWithoToken } from '../helpers/fecht'
 
 export const LoginPage = () => {
 
     const initialState = {
-        email: "",
-        password: "",
+        email: "test.com",
+        password: "123456",
     }
     const [values, changeForm, reset] = useForm(initialState)
     const { email, password } = values
     console.log(values)
-    const handleSubmit = (event)=>{
+    const handleSubmit = async (event) => {
         event.preventDefault()
-        if (password.length < 6 ){
-            return Swal.fire("Error","la contraseña debe ser de minimo 6 caracteres","error")
+        if (password.length < 6) {
+            return Swal.fire("Error", "la contraseña debe ser de minimo 6 caracteres", "error")
         }
+
+        const data = { email, password}
+        const auth = await fetchWithoToken('login', data , 'POST')
+        console.log(auth)
+        const y = import.meta.env.VITE_APP_URL_API
+        console.log(y)
+
     }
     return (
         <div className='container-login-logout'>
 
             <div className="form-container">
                 <p className="title">Login</p>
-                <form 
-                className="form"
-                onSubmit={handleSubmit}>
+                <form
+                    className="form"
+                    onSubmit={handleSubmit}>
                     <div className="input-group">
                         <label >Email</label>
                         <input
