@@ -21,9 +21,7 @@ export const LoginPage = () => {
 
         const data = { email, password}
         const auth = await fetchWithoToken('login', data , 'POST')
-        console.log(auth)
-        const y = import.meta.env.VITE_APP_URL_API
-        console.log(y)
+        localStorage.setItem('token', auth.token)
 
     }
     return (
