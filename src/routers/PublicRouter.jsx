@@ -9,6 +9,6 @@ export const PublicRouter = ({ children, logged }) => {
         : children
 }
 
-PrivateRouter.propTypes = {
+PublicRouter.propTypes = {
     children: PropTypes.element.isRequired,
 }
