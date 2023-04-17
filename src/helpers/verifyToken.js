@@ -1,10 +1,5 @@
 import jwtDecode from "jwt-decode"
 
-export const verifyToken = (token = '') => {
-    const { exp } = jwtDecode(token)
-    console.log(jwtDecode(token))
-}
-
 export const isExpired = (exp) => {
     const expired = exp * 1000
     const timeout = expired - Date.now()
@@ -15,3 +10,10 @@ export const isExpired = (exp) => {
 
     return false
 }
+
+export const verifyToken = (token = '') => {
+    const { exp } = jwtDecode(token)
+    const status  = isExpired(exp)
+    return !status
+}
+
