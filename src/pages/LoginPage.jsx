@@ -3,6 +3,7 @@ import "../scss/index.scss"
 import { useForm } from '../hooks/useForm'
 import Swal from 'sweetalert2'
 import {  fetchWithoToken } from '../helpers/fecht'
+import { verifyToken } from '../helpers/verifyToken'
 
 export const LoginPage = () => {
 
@@ -22,6 +23,7 @@ export const LoginPage = () => {
         const data = { email, password}
         const auth = await fetchWithoToken('login', data , 'POST')
         localStorage.setItem('token', auth.token)
+        verifyToken(auth.token)
 
     }
     return (
