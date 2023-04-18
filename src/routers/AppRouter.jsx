@@ -11,28 +11,26 @@ import { PublicRouter } from "./PublicRouter"
 export const AppRouter = () => {
     const token = localStorage.getItem("token")
     const initialState = verifyToken(token)
-    const [tokenState, setTokenState] = useState(initialState)
+    console.log(initialState)
 
-    useEffect(() => {
-        setTokenState(verifyToken(tokenState))
-    }, [])
+
 
     return (
         <Routes>
             <Route path="/home" element={
-                <PrivateRouter>
+                <PrivateRouter logged={initialState}>
                     <HomePage />
                 </PrivateRouter>}
             />
 
             <Route path="/login" element={
-                <PublicRouter >
+                <PublicRouter logged={initialState} >
                     <LoginPage />
                 </PublicRouter>}
             />
 
             <Route path="/register" element={
-                <PublicRouter >
+                <PublicRouter logged={initialState} >
                     <Registerpage />
                 </PublicRouter>}
             />

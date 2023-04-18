@@ -11,9 +11,18 @@ export const isExpired = (exp) => {
     return false
 }
 
-export const verifyToken = (token = '') => {
-    const { exp } = jwtDecode(token)
-    const status  = isExpired(exp)
-    return !status
+export const verifyToken = () => {
+
+    const token = localStorage.getItem("token")
+    try {
+        const { exp } = jwtDecode(token)
+        const status  = isExpired(exp)
+        console.log( "salio bien")
+        return !status
+    } catch (error) {
+        console.log( jwtDecode(token) )
+        return false
+    }
+
 }
 
