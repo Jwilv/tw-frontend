@@ -51,9 +51,23 @@ export const startLogin = ({ email, password }) => {
             console.log("malio sal")
             return false
         }
+    }
+}
 
-
-
+export const startRegister = (data) => {
+    return async (dispatch) => {
+        try {
+            const { token } = await fetchWithoToken('register', data , 'POST')
+            localStorage.setItem('token', token)
+            dispatch(login({
+                checking: false,
+                looged: true,
+            }))
+            return true
+        } catch (error) {
+            console.log("malio sal")
+            return false
+        }
     }
 }
 
