@@ -35,4 +35,12 @@ const authSlice = createSlice({
 
 const {login,logout,checkingFinish} = authSlice.actions;
 
+export const startLogin = ({email,password})=>{
+return async(dispatch)=>{
+    const auth = await fetchWithoToken('login', {email, password} , 'POST')
+    localStorage.setItem('token', auth.token)
+    dispatch(login({checking : false }))
+}
+}
+
 export default authSlice.reducer;

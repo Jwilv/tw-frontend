@@ -7,6 +7,8 @@ import { verifyToken } from '../helpers/verifyToken'
 
 export const LoginPage = () => {
 
+    
+
     const initialState = {
         email: "test.com",
         password: "123456",
@@ -21,8 +23,8 @@ export const LoginPage = () => {
         }
 
         const data = { email, password}
-        const auth = await fetchWithoToken('login', data , 'POST')
-        localStorage.setItem('token', auth.token)
+
+    
 
     }
     return (
