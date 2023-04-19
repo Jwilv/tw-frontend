@@ -21,8 +21,7 @@ export const LoginPage = () => {
         }
 
         const data = { email, password}
-        const auth = await fetchWithoToken('login', data , 'POST')
-        localStorage.setItem('token', auth.token)
+       
 
     }
     return (

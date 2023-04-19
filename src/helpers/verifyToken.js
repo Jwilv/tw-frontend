@@ -20,7 +20,7 @@ export const verifyToken = () => {
         console.log( "salio bien")
         return !status
     } catch (error) {
-        console.log( jwtDecode(token) )
+        console.log("salio mal")
         return false
     }
 
