@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 export const PublicRouter = ({ children, logged }) => {
 
     return (logged)
-        ? <Navigate to={'/home'} />
+        ? <Navigate to={'/'} />
         : children
 }
 

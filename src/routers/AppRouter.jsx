@@ -22,7 +22,7 @@ export const AppRouter = () => {
 
     return (
         <Routes>
-            <Route path="/home" element={
+            <Route path="/" element={
                 <PrivateRouter logged={looged}>
                     <HomePage />
                 </PrivateRouter>}
