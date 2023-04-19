@@ -21,9 +21,10 @@ const authSlice = createSlice({
             }
         },
 
-        logout: () => {
+        logout: (state) => {
             return {
-                initialState
+                checking : false,
+                looged : false,
             }
         },
         checkingFinish: (state) => {
@@ -85,6 +86,7 @@ export const startRenew = () => {
             console.log(error)
             console.log("malio sal")
             dispatch(checkingFinish())
+            dispatch(logout())
             return false
         }
     }
