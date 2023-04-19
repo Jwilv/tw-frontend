@@ -15,7 +15,11 @@ export const AppRouter = () => {
     dispatch(startRenew())
     }, [])
 
-    const {looged} = useSelector(state => state.auth)
+    const {looged, checking} = useSelector(state => state.auth)
+
+    if (checking){
+        return <Spinner />
+    }
 
     return (
         <Routes>

@@ -84,6 +84,7 @@ export const startRenew = () => {
         } catch (error) {
             console.log(error)
             console.log("malio sal")
+            dispatch(checkingFinish())
             return false
         }
     }
