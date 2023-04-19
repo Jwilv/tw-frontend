@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { Route, Routes } from "react-router"
 import { HomePage } from "../pages/HomePage"
 import { LoginPage } from "../pages/LoginPage"
 import { Registerpage } from "../pages/RegisterPage"
-import { verifyToken } from "../helpers/verifyToken"
 import { PrivateRouter } from "./PrivateRouter"
 import { PublicRouter } from "./PublicRouter"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { startRenew } from "../redux/auth.slice"
 
 
 export const AppRouter = () => {
-    const token = localStorage.getItem("token")
-    let initialState = verifyToken(token)
-    console.log(initialState)
-    const [statusToken, setStatusToken] = useState(initialState)
+    const dispatch = useDispatch();
     useEffect(() => {
-        setStatusToken(verifyToken(token))
+    dispatch(startRenew())
     }, [])
 
     const {looged} = useSelector(state => state.auth)

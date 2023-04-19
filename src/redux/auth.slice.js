@@ -71,10 +71,10 @@ export const startRegister = (data) => {
     }
 }
 
-export const startRenew = (data) => {
+export const startRenew = () => {
     return async (dispatch) => {
         try {
-            const { token } = await fetchToken('renew', data )
+            const { token } = await fetchToken('renew' )
             localStorage.setItem('token', token)
             dispatch(login({
                 checking: false,
@@ -82,6 +82,7 @@ export const startRenew = (data) => {
             }))
             return true
         } catch (error) {
+            console.log(error)
             console.log("malio sal")
             return false
         }

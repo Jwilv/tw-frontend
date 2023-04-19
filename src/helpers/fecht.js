@@ -25,7 +25,7 @@ export const fetchWithoToken = async (endpoint, data, method = "GET") => {
 
 export const fetchToken = async (endpoint, data, method = "GET") => {
     const url = `${baseUrl}/${endpoint}`
-    const token = {}
+    const token = localStorage.getItem('token')
 
     if (method === "GET") {
         const resp = await fetch(url, {
