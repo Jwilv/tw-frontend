@@ -1,0 +1,18 @@
+.notes-user-container{
+height: 10vh;
+width: 100vw;
+overflow: hidden;
+display: flex;
+}
+
+.notes-user-img{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.img-user{
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+}
