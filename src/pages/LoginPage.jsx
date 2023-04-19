@@ -4,10 +4,12 @@ import { useForm } from '../hooks/useForm'
 import Swal from 'sweetalert2'
 import {  fetchWithoToken } from '../helpers/fecht'
 import { verifyToken } from '../helpers/verifyToken'
+import { useDispatch } from 'react-redux'
+import { startLogin } from '../redux/auth.slice'
 
 export const LoginPage = () => {
 
-    
+    const dispatch = useDispatch()
 
     const initialState = {
         email: "test.com",
@@ -24,6 +26,7 @@ export const LoginPage = () => {
 
         const data = { email, password}
 
+        dispatch(startLogin(data))
     
 
     }

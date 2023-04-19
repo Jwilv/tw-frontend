@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { fetchWithoToken } from "../helpers/fecht";
 
 const initialState = {
     name: "",
     uid: "",
     checking: true,
+    looged: false,
 }
 
 
@@ -33,14 +35,26 @@ const authSlice = createSlice({
     }
 })
 
-const {login,logout,checkingFinish} = authSlice.actions;
+const { login, logout, checkingFinish } = authSlice.actions;
 
-export const startLogin = ({email,password})=>{
-return async(dispatch)=>{
-    const auth = await fetchWithoToken('login', {email, password} , 'POST')
-    localStorage.setItem('token', auth.token)
-    dispatch(login({checking : false }))
-}
+export const startLogin = ({ email, password }) => {
+    return async (dispatch) => {
+        try {
+            const { token } = await fetchWithoToken('login', { email, password }, 'POST')
+            localStorage.setItem('token', token)
+            dispatch(login({
+                checking: false,
+                looged: true,
+            }))
+            return true
+        } catch (error) {
+            console.log("malio sal")
+            return false
+        }
+
+
+
+    }
 }
 
 export default authSlice.reducer;

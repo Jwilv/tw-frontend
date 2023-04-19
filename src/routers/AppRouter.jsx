@@ -6,6 +6,7 @@ import { Registerpage } from "../pages/RegisterPage"
 import { verifyToken } from "../helpers/verifyToken"
 import { PrivateRouter } from "./PrivateRouter"
 import { PublicRouter } from "./PublicRouter"
+import { useSelector } from "react-redux"
 
 
 export const AppRouter = () => {
@@ -17,25 +18,24 @@ export const AppRouter = () => {
         setStatusToken(verifyToken(token))
     }, [])
 
-
-
+    const {looged} = useSelector(state => state.auth)
 
     return (
         <Routes>
             <Route path="/home" element={
-                <PrivateRouter logged={statusToken}>
+                <PrivateRouter logged={looged}>
                     <HomePage />
                 </PrivateRouter>}
             />
 
             <Route path="/login" element={
-                <PublicRouter logged={statusToken} >
+                <PublicRouter logged={looged} >
                     <LoginPage />
                 </PublicRouter>}
             />
 
             <Route path="/register" element={
-                <PublicRouter logged={statusToken} >
+                <PublicRouter logged={looged} >
                     <Registerpage />
                 </PublicRouter>}
             />
