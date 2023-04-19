@@ -7,6 +7,7 @@ import { PrivateRouter } from "./PrivateRouter"
 import { PublicRouter } from "./PublicRouter"
 import { useDispatch, useSelector } from "react-redux"
 import { startRenew } from "../redux/auth.slice"
+import { Spinner } from "../pages/Spinner"
 
 
 export const AppRouter = () => {
