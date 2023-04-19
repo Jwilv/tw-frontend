@@ -18,8 +18,8 @@ export const AppRouter = () => {
 
     const {looged, checking} = useSelector(state => state.auth)
 
-    if (checking){
-        return <Spinner />
+    if (true){
+        return (<Spinner />)
     }
 
     return (
