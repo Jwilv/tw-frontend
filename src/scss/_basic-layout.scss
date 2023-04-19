@@ -1,16 +1,17 @@
-.basic-layout {
-    &__menu {
-        padding-right: 0 !important;
-    }
+.menu-container {
+    display: flex;
+}
 
-    &__content {
-        height: 100vh;
-        overflow-y: scroll;
-        padding: 0 !important;
-        border-right: 1px solid $border-grey;
 
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
+.menu-left {
+    margin: 60px;
+    height: 85vh;
+    width: 20vw;
+    background-color: red;
+}
+
+.MenuNotes-container {
+    height: 100vh;
+    width: 50vw;
+    overflow: auto;
 }
