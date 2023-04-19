@@ -3,8 +3,12 @@ import "../scss/index.scss"
 import { useForm } from '../hooks/useForm'
 import Swal from 'sweetalert2'
 import { fetchWithoToken } from '../helpers/fecht'
+import { useDispatch } from 'react-redux'
+import { startRegister } from '../redux/auth.slice'
 
 export const Registerpage = () => {
+
+    const dispatch = useDispatch()
 
     const initialState = {
         email: "",
@@ -36,8 +40,7 @@ export const Registerpage = () => {
             email,
         }
 
-        const auth = await fetchWithoToken('register', data, 'POST')
-        localStorage.setItem("token", auth.token)
+        dispatch(startRegister(data))
     }
     return (
         <div className='container-login-logout'>
