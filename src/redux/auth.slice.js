@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchWithoToken } from "../helpers/fecht";
+import { fetchToken, fetchWithoToken } from "../helpers/fecht";
 
 const initialState = {
     name: "",
@@ -58,6 +58,23 @@ export const startRegister = (data) => {
     return async (dispatch) => {
         try {
             const { token } = await fetchWithoToken('register', data , 'POST')
+            localStorage.setItem('token', token)
+            dispatch(login({
+                checking: false,
+                looged: true,
+            }))
+            return true
+        } catch (error) {
+            console.log("malio sal")
+            return false
+        }
+    }
+}
+
+export const startRenew = (data) => {
+    return async (dispatch) => {
+        try {
+            const { token } = await fetchToken('renew', data )
             localStorage.setItem('token', token)
             dispatch(login({
                 checking: false,
