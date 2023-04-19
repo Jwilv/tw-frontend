@@ -17,9 +17,8 @@ export const Registerpage = () => {
         name: "",
 
     }
-    const [values, changeForm, reset] = useForm(initialState)
+    const [values, changeForm ] = useForm(initialState)
     const { email, password, passwordConfirm, name } = values
-    console.log(values)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
