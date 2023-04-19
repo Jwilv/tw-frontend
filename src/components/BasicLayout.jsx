@@ -1,6 +1,4 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-
 export const BasicLayout = ({ children, className }) => {
     return (
         <div className='menu-container'>
