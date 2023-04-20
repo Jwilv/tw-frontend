@@ -11,8 +11,10 @@ export const NotesUser = () => {
                     className='img-user'
                 />
             </div>
-            <h1>NotesUser</h1>
-            <hr />
+            <div className='notes-user-info'>
+                <p className='notes-user-name'>juan</p>
+                <p className='notes-user-note'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis debitis in harum nisi quae necessitatibus neque voluptatum fugiat vel beatae doloremque facilis quo, omnis perspiciatis eligendi reprehenderit dignissimos ipsum ipsa.</p>
+            </div>
         </div>
     )
 }

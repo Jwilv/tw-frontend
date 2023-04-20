@@ -19,6 +19,9 @@ export const MenuNotes = () => {
             <NotesUser />
             <NotesUser />
             <NotesUser />
+            <NotesUser />
+            <NotesUser />
+
 
         </div>
     )
