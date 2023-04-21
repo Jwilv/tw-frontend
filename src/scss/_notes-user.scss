@@ -36,6 +36,38 @@ margin: 7px;
 .container-post-note{
     height: 25vh;
     width: 40vw;
-    background-color: red;
     border: 1px #454545  solid;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+}
+
+.card-post-note{
+    width: 90%;
+    height: 90%;
+
+    border-radius: 10px;
+    border: 1px #454545  solid;
+}
+
+.user-post{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.user-post-img{
+    margin: 10px;
+    margin-left: 15px;
+}
+.user-post-img-user{
+    border-radius: 100px;
+    width: 70px;
+    height: 70px;
+}
+
+.user-post-name{
+    p{
+        font-size: 25px;
+    }
 }
