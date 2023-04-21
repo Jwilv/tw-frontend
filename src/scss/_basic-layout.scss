@@ -13,7 +13,9 @@
 
 .menu-left-options{
 display: flex;
-justify-content: end;
+justify-content: start;
+align-items: start;
+flex-direction: column;
 }
 
 
