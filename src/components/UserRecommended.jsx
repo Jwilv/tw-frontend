@@ -10,6 +10,10 @@ export const UserRecommended = () => {
                     className='img-user'
                 />
             </div>
+            
+            <div className="menu-right-user-name">
+                <p>juancito</p>
+            </div>
         </div>
     )
 }
