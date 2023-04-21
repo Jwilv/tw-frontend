@@ -15,12 +15,13 @@ export const MenuRight = () => {
 
             <div className='menu-container-right-items'>
                 <p className="menu-container-right-title-notes"> Publicaciones recomendados: </p>
-                <div className='menu-container-right-notes'>
-                    <NotesUser />
-                    <NotesUser />
-                    <NotesUser />
+                <div className='menu-container-right-items-notes'>
+                    <div className='menu-container-right-notes'>
+                        <NotesUser />
+                        <NotesUser />
+                        <NotesUser />
+                    </div>
                 </div>
-
             </div>
 
         </div>
