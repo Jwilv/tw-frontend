@@ -1,6 +1,15 @@
 
 import React from 'react'
+import { useDispatch } from "react-redux"
+import { startLogout } from '../redux/auth.slice';
 export const BasicLayout = ({ children, className }) => {
+    
+    const dispatch = useDispatch();
+
+    const handleLogout = ()=>{
+        dispatch(startLogout())
+    }
+
     return (
         <div className='menu-container'>
             <div className='menu-left'>
@@ -27,7 +36,9 @@ export const BasicLayout = ({ children, className }) => {
                         Perfil
                     </p>
 
-                    <p className='menu-left-items'>
+                    <p className='menu-left-items'
+                    onClick={handleLogout}
+                    >
                         <i className="fa-solid fa-power-off"
                             style={{ color: "#ffffff", }}
                         />
