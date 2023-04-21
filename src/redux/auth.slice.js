@@ -23,8 +23,8 @@ const authSlice = createSlice({
 
         logout: (state) => {
             return {
-                checking : false,
-                looged : false,
+                checking: false,
+                looged: false,
             }
         },
         checkingFinish: (state) => {
@@ -58,7 +58,7 @@ export const startLogin = ({ email, password }) => {
 export const startRegister = (data) => {
     return async (dispatch) => {
         try {
-            const { token } = await fetchWithoToken('register', data , 'POST')
+            const { token } = await fetchWithoToken('register', data, 'POST')
             localStorage.setItem('token', token)
             dispatch(login({
                 checking: false,
@@ -75,7 +75,7 @@ export const startRegister = (data) => {
 export const startRenew = () => {
     return async (dispatch) => {
         try {
-            const { token } = await fetchToken('renew' )
+            const { token } = await fetchToken('renew')
             localStorage.setItem('token', token)
             dispatch(login({
                 checking: false,
@@ -89,6 +89,12 @@ export const startRenew = () => {
             dispatch(logout())
             return false
         }
+    }
+}
+
+export const startLogout = () => {
+    return async (dispatch) => {
+        dispatch(logout())
     }
 }
 
