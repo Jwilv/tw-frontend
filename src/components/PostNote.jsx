@@ -16,6 +16,9 @@ export const PostNote = () => {
             <p>juan carlos chupa pija</p>
           </div>
         </div>
+        <div className="user-post-input">
+            <input className="input-post" name="text" type="text" required="" />
+        </div>
       </div>
     </div>
   )

@@ -96,7 +96,6 @@ margin-bottom: 0;
     overflow: auto;
 }
 .menu-container-right-notes {
-    width: 100%;
     height: 100%;
     margin: auto;
     width: 90%;
@@ -106,6 +105,35 @@ margin-bottom: 0;
 
 .menu-container-right-items-notes{
     width: 100%;
-    height: 89.7%;
+    height: 80%;
     overflow: auto;
+}
+
+.input-post{
+    border: none;
+    width: 90%;
+    background-color: transparent;
+    border-bottom: 1px #454545 solid;
+    outline: none;
+    color: #fff;
+
+    :focus{
+        outline: 0;
+        border: none;
+        display: none;
+    }
+
+    :valid{
+        outline: 0;
+        border: none;
+        display: none;  
+    }
+}
+
+.user-post-input{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
