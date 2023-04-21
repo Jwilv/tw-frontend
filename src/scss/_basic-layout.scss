@@ -7,22 +7,24 @@
     margin: 0px;
     height: 50vh;
     width: 25vw;
-    
+
     display: flex;
 }
 
-.menu-left-options{
-display: flex;
-justify-content: end ;
-align-items: start;
-flex-direction: column;
+.menu-left-options {
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    flex-direction: column;
 }
 
-.menu-left-items{
+.menu-left-items {
     font-size: 25px;
     margin: 10px;
     margin-left: 80px;
-    i{
+    cursor: pointer;
+
+    i {
         margin-right: 10px;
     }
 }
@@ -33,5 +35,5 @@ flex-direction: column;
     height: 73vh;
     width: 40vw;
     overflow: auto;
-    border: 1px #454545  solid;
+    border: 1px #454545 solid;
 }
