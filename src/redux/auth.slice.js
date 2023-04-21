@@ -94,6 +94,7 @@ export const startRenew = () => {
 
 export const startLogout = () => {
     return async (dispatch) => {
+        localStorage.removeItem("token")
         dispatch(logout())
     }
 }
