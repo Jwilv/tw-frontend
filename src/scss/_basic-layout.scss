@@ -4,18 +4,27 @@
 
 
 .menu-left {
-    margin: 60px;
-    height: 85vh;
-    width: 20vw;
-    background-color: red;
+    margin: 0px;
+    height: 50vh;
+    width: 25vw;
+    
     display: flex;
 }
 
 .menu-left-options{
 display: flex;
-justify-content: start;
+justify-content: end ;
 align-items: start;
 flex-direction: column;
+}
+
+.menu-left-items{
+    font-size: 25px;
+    margin: 10px;
+    margin-left: 80px;
+    i{
+        margin-right: 10px;
+    }
 }
 
 
