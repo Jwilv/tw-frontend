@@ -37,3 +37,18 @@
     overflow: auto;
     border: 1px #454545 solid;
 }
+
+.menu-container-right{
+    width: 40vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.menu-container-right-items{
+    width: 80%;
+    height: 40%;
+    background-color: red;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 10px;
+}
