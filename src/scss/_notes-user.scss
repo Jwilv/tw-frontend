@@ -34,12 +34,13 @@ margin: 7px;
 }
 
 .container-post-note{
-    height: 25vh;
+    height: 23vh;
     width: 40vw;
     border: 1px #454545  solid;
     display: flex;
     justify-content:center ;
     align-items: center;
+    border-bottom: none;
 }
 
 .card-post-note{

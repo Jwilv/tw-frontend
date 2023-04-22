@@ -6,7 +6,7 @@
 .menu-left {
     margin: 0px;
     height: 50vh;
-    width: 25vw;
+    width: 20vw;
 
     display: flex;
 }
@@ -20,19 +20,18 @@
 
 .menu-left-items {
     font-size: 25px;
-    margin: 10px;
-    margin-left: 80px;
+    margin: 5px;
     cursor: pointer;
 
     i {
-        margin-right: 10px;
+        margin-right: 5px;
     }
 }
 
 
 
 .MenuNotes-container {
-    height: 73vh;
+    height: 77vh;
     width: 40vw;
     overflow: auto;
     border: 1px #454545 solid;
@@ -54,7 +53,7 @@
 }
 
 .menu-container-right-items-user {
-    width: 80%;
+    width: 70%;
     height: 40%;
     margin: auto;
     margin-top: 10%;
