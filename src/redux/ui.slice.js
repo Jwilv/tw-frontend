@@ -15,3 +15,7 @@ const uiSlice = createSlice({
         }
     }
 })
+
+export const {ChangeMenuNotes} = uiSlice.actions
+
+export default uiSlice.reducer;
