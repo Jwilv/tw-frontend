@@ -39,6 +39,7 @@
     height: 16%;
     width: 100%;
     border-bottom: 1px #454545 solid;
+    padding-bottom: 10px;
 
 }
 
@@ -67,7 +68,7 @@
     margin: auto;
 
     ::placeholder {
-        color: #fff;
+        color: #546E7A;
     }
 
     input {
@@ -81,11 +82,15 @@
     }
 
     button {
+        margin-top: -10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-left: 5%;
         border-radius: 100px;
         background-color: #71c9f8;
         border: none;
         color: #fff;
-        width: 10%;
+        padding: 20px;
     }
 }
