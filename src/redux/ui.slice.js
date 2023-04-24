@@ -1,21 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    Suggestions: false,
+    suggestions: false,
+    home: true,
 }
 const uiSlice = createSlice({
     name: "ui",
     initialState,
     reducers: {
-        ChangeMenuNotes: (state) => {
+        openMenu: (state) => {
             return {
                 ...state,
-                Suggestions : !state.Suggestions,
+                suggestions: false,
+                home: true,
+            }
+        },
+        openSuggestions: (state) => {
+            return {
+                ...state,
+                suggestions: true,
+                home: false,
             }
         }
     }
 })
 
-export const {ChangeMenuNotes} = uiSlice.actions
+export const { openMenu, openSuggestions } = uiSlice.actions
 
 export default uiSlice.reducer;
