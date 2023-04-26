@@ -1,19 +1,61 @@
-.container-profileinfo{
-    width:100vw;
-    height: 40vh;
+.container-profileinfo {
+    width: 100vw;
+    height: 50vh;
     background-color: aqua;
     display: flex;
     justify-content: center;
 }
 
-.profileinfo-user{
+.profileinfo-user {
     width: 70vw;
     height: 100%;
-    background-color:black;
+    background-color: black;
+    overflow: hidden;
 }
 
-.banner{
+.banner {
     width: 100%;
-    height: 70%;
+    height: 60%;
     background-color: blueviolet;
+
+    .banner-img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.info {
+    width: 100%;
+    height: 50%;
+    background-color: brown;
+}
+
+.img-profile {
+
+    width: 20%;
+    margin: 0;
+
+    img {
+        border: 5px #454545 solid;
+        margin-left: 20px;
+        height: 150px;
+        width: 150px;
+        margin-top: -13vh;
+        border-radius: 100%;
+    }
+}
+
+.name-profile{
+    width: 50%;
+    background-color: darkblue;
+}
+
+.bio-profile{
+    margin-top: -10px;
+    width: 50%;
+    background-color: darkblue;
+}
+
+.container-bio-name{
+    display: flex;
 }
