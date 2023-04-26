@@ -5,13 +5,14 @@
 
 .menu-left {
     margin: 0px;
-    height: 50vh;
+    height: 30vh;
     width: 20vw;
 
     display: flex;
 }
 
 .menu-left-options {
+    margin-left: 10%;
     display: flex;
     justify-content: end;
     align-items: start;

@@ -4,14 +4,9 @@ import { UserRecommended } from './UserRecommended'
 
 export const MenuRight = () => {
     return (
+
+
         <div className='menu-container-right'>
-            <div className='menu-container-right-items-user'>
-                <p className="menu-container-right-title"> Usuarios recomendados: </p>
-                <UserRecommended />
-                <UserRecommended />
-                <UserRecommended />
-                <UserRecommended />
-            </div>
 
             <div className='menu-container-right-items'>
                 <p className="menu-container-right-title-notes"> Publicaciones recomendados: </p>
@@ -24,6 +19,15 @@ export const MenuRight = () => {
                 </div>
             </div>
 
+
+            <div className='menu-container-right-items-user'>
+                <p className="menu-container-right-title"> Usuarios recomendados: </p>
+                <UserRecommended />
+                <UserRecommended />
+                <UserRecommended />
+                <UserRecommended />
+            </div>
+            
         </div>
     )
 }
