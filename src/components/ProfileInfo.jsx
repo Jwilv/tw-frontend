@@ -3,8 +3,12 @@ import React from 'react'
 export const ProfileInfo = () => {
     return (
         <div className='container-profileinfo'>
-            ProfileInfo
-            
+            <div className="profileinfo-user">
+                <div className="banner">
+
+                </div>
+            </div>
+
         </div>
     )
 }
