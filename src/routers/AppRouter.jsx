@@ -8,6 +8,7 @@ import { PublicRouter } from "./PublicRouter"
 import { useDispatch, useSelector } from "react-redux"
 import { startRenew } from "../redux/auth.slice"
 import { Spinner } from "../pages/Spinner"
+import { ProfileScreen } from "../pages/ProfileScreen"
 
 
 export const AppRouter = () => {
