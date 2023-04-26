@@ -13,12 +13,12 @@ import { Spinner } from "../pages/Spinner"
 export const AppRouter = () => {
     const dispatch = useDispatch();
     useEffect(() => {
-    dispatch(startRenew())
+        dispatch(startRenew())
     }, [])
 
-    const {looged, checking} = useSelector(state => state.auth)
+    const { looged, checking } = useSelector(state => state.auth)
 
-    if (checking){
+    if (checking) {
         return (<Spinner />)
     }
 
@@ -40,6 +40,12 @@ export const AppRouter = () => {
                 <PublicRouter logged={looged} >
                     <Registerpage />
                 </PublicRouter>}
+            />
+
+            <Route path="/profile/:profileId" element={
+                <PrivateRouter logged={looged} >
+                    <ProfileScreen />
+                </PrivateRouter>}
             />
         </Routes>
     )
