@@ -23,7 +23,7 @@ export const ProfileInfo = () => {
 
                         <div className="name-profile">
                             <strong>pedro <strong>faustino tercero</strong> </strong>
-                            <p> <i className="fa-solid fa-location-dot" style={{color: "#ffffff",}} />Las piernas de tu mujer</p>
+                            <p> <i className="fa-solid fa-location-dot" style={{color: "#ffffff",}} />no se pa</p>
                         </div>
 
                         <div className="bio-profile">
