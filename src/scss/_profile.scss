@@ -1,3 +1,7 @@
+.profile-container{
+overflow-x: hidden;
+}
+
 .container-profileinfo {
     width: 100vw;
     height: 50vh;
@@ -94,4 +98,22 @@
     display: flex;
     justify-content: start;
     margin-left: 20px;
+}
+
+.notes-profile{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.notes-profile-width{
+    width: 70vw;
+    border: 1px #454545 solid;
+    border-top: none;
+    overflow:scroll;
+
+    .post-note-container{
+        height: 6%;
+    }
 }

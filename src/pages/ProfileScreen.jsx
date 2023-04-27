@@ -8,28 +8,47 @@ export const ProfileScreen = () => {
     const { profileId } = useParams();
     console.log(profileId)
     return (
-        <>
+        <div className='profile-container'>
             <ProfileInfo />
-            <div className='MenuNotes-container'>
-                <PostNote />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
-                <NotesUser />
+            <div className="notes-profile">
+                <div className='notes-profile-width'>
+                    <PostNote />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                    <NotesUser />
+                </div>
             </div>
-        </>
+        </div>
     )
 }
