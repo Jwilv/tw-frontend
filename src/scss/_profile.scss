@@ -44,6 +44,7 @@
 
 .name-profile {
     display: flex;
+    flex-direction: column;
     width: 50%;
     margin-top: 10px;
 
@@ -56,6 +57,7 @@
     }
 
     i{
+        margin-top: 20px;
         margin-right: 10px;
     }
 }

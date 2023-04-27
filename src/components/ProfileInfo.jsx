@@ -22,8 +22,7 @@ export const ProfileInfo = () => {
                     <div className="container-bio-name">
 
                         <div className="name-profile">
-                            <strong>pedro</strong>
-                            <strong>faustino tercero</strong>
+                            <strong>pedro <strong>faustino tercero</strong> </strong>
                             <p> <i className="fa-solid fa-location-dot" style={{color: "#ffffff",}} />Las piernas de tu mujer</p>
                         </div>
 
