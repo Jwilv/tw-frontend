@@ -2,6 +2,7 @@
 import React from 'react'
 import { useDispatch } from "react-redux"
 import { startLogout } from '../redux/auth.slice';
+import { Link } from 'react-router-dom';
 export const BasicLayout = ({ children, className }) => {
     
     const dispatch = useDispatch();
@@ -33,7 +34,10 @@ export const BasicLayout = ({ children, className }) => {
                         <i className="fa-solid fa-user"
                             style={{ color: "#ffffff", }}
                         />
-                        Perfil
+                        <Link 
+                        to={"/profile/:123"}
+                        className='link'
+                        >Perfil</Link>
                     </p>
 
                     <p className='menu-left-items'
