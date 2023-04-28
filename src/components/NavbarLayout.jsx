@@ -14,10 +14,19 @@ export const NavbarLayout = ({ children }) => {
     }
 
     return (
+
         <>
-            <h1
-                onClick={backPage}>NavbarLayout</h1>
-            {children}
+                <div className='navbar-container'>
+                <i 
+                className="fa-solid fa-arrow-left icon" 
+                style={{color: "#ffffff",}} 
+                onClick={backPage}
+                />
+            
+        </div>
+
+        {children}
         </>
+
     )
 }
