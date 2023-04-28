@@ -25,6 +25,10 @@ export const SearchMenu = () => {
 
             <div className="container-search-users">
                 <ProfileCard />
+                <ProfileCard />
+                <ProfileCard />
+                <ProfileCard />
+                
             </div>
         </div>
     )

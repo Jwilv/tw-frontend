@@ -1,12 +1,13 @@
 .container-SearchUsers{
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 .container-search-input{
+    margin-top: 30px;
     width: 50vw;
     height: 15vh;
     display: flex;
@@ -16,8 +17,7 @@
 
 .container-search-users{
     width: 40vw;
-    height: 60vh;
-    background-color: red;
+    height: auto;
 }
 
 /* this is a recreation of twitter search in css */
