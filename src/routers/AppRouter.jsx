@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { startRenew } from "../redux/auth.slice"
 import { Spinner } from "../pages/Spinner"
 import { ProfileScreen } from "../pages/ProfileScreen"
+import { SearchUsersPage } from "../pages/SearchUsersPage"
 
 
 export const AppRouter = () => {
@@ -46,6 +47,12 @@ export const AppRouter = () => {
             <Route path="/profile/:profileId" element={
                 <PrivateRouter logged={looged} >
                     <ProfileScreen />
+                </PrivateRouter>}
+            />
+
+            <Route path="/search" element={
+                <PrivateRouter logged={looged} >
+                    <SearchUsersPage />
                 </PrivateRouter>}
             />
         </Routes>
