@@ -41,3 +41,5 @@ export const startDataProfile = (id) => {
         }
     }
 }
+
+export default profileSlice.reducer ;
