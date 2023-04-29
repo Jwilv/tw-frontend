@@ -7,7 +7,7 @@ const initialState = {
 }
 
 const userSlice = createSlice({
-    name: uUser,
+    name: "uUser",
     initialState,
     reducers: {
         userData: (state, action) => {
@@ -19,6 +19,12 @@ const userSlice = createSlice({
     }
 })
 
-export const {userData} = userSlice.actions ;
+const {userData} = userSlice.actions ;
+
+export const startUserData = ()=>{
+    return (dispatch)=>{
+        
+    }
+}
 
 export default userSlice.reducer ;

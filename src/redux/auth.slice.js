@@ -2,8 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchToken, fetchWithoToken } from "../helpers/fecht";
 
 const initialState = {
-    name: "",
-    uid: "",
     checking: true,
     looged: false,
 }

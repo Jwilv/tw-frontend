@@ -10,7 +10,7 @@ import { startRenew } from "../redux/auth.slice"
 import { Spinner } from "../pages/Spinner"
 import { ProfileScreen } from "../pages/ProfileScreen"
 import { SearchUsersPage } from "../pages/SearchUsersPage"
-import { verifyToken } from "../helpers/verifyToken"
+import { verifyToken } from "../helpers/getUidAndName"
 
 
 export const AppRouter = () => {
