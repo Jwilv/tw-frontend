@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { getUidAndName } from "../helpers/getUidAndName";
 
 
 const initialState = {
@@ -23,7 +24,7 @@ const {userData} = userSlice.actions ;
 
 export const startUserData = ()=>{
     return (dispatch)=>{
-        
+        dispatch(userData(getUidAndName()))
     }
 }
 

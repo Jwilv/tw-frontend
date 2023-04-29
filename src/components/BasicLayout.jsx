@@ -1,11 +1,13 @@
 
 import React from 'react'
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { startLogout } from '../redux/auth.slice';
 import { Link } from 'react-router-dom';
 export const BasicLayout = ({ children }) => {
 
     const dispatch = useDispatch();
+
+    const {_id} = useSelector(state => state.user)
 
     const handleLogout = () => {
         dispatch(startLogout())
@@ -31,7 +33,7 @@ export const BasicLayout = ({ children }) => {
                             style={{ color: "#ffffff", }}
                         />
                         <Link
-                            to={"/profile/:123"}
+                            to={`/profile/:${_id}`}
                             className='link'
                         >Perfil</Link>
                     </p>

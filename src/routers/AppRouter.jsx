@@ -10,13 +10,14 @@ import { startRenew } from "../redux/auth.slice"
 import { Spinner } from "../pages/Spinner"
 import { ProfileScreen } from "../pages/ProfileScreen"
 import { SearchUsersPage } from "../pages/SearchUsersPage"
-import { verifyToken } from "../helpers/getUidAndName"
+import { startUserData } from "../redux/user.slice"
 
 
 export const AppRouter = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(startRenew())
+        dispatch(startUserData())
     }, [])
 
 
@@ -27,8 +28,7 @@ export const AppRouter = () => {
         return (<Spinner />)
     }
 
-    verifyToken()
-
+    
     return (
         <Routes>
             <Route path="/" element={

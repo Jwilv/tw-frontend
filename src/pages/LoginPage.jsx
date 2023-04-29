@@ -2,8 +2,6 @@ import React from 'react'
 import "../scss/index.scss"
 import { useForm } from '../hooks/useForm'
 import Swal from 'sweetalert2'
-import {  fetchWithoToken } from '../helpers/fecht'
-import { verifyToken } from '../helpers/getUidAndName'
 import { useDispatch } from 'react-redux'
 import { startLogin } from '../redux/auth.slice'
 
