@@ -33,7 +33,7 @@ export const BasicLayout = ({ children }) => {
                             style={{ color: "#ffffff", }}
                         />
                         <Link
-                            to={`/profile/:${_id}`}
+                            to={`/profile/${_id}`}
                             className='link'
                         >Perfil</Link>
                     </p>
