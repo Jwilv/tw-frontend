@@ -10,6 +10,7 @@ import { startRenew } from "../redux/auth.slice"
 import { Spinner } from "../pages/Spinner"
 import { ProfileScreen } from "../pages/ProfileScreen"
 import { SearchUsersPage } from "../pages/SearchUsersPage"
+import { verifyToken } from "../helpers/verifyToken"
 
 
 export const AppRouter = () => {
@@ -18,11 +19,15 @@ export const AppRouter = () => {
         dispatch(startRenew())
     }, [])
 
+
+
     const { looged, checking } = useSelector(state => state.auth)
 
     if (checking) {
         return (<Spinner />)
     }
+
+    verifyToken()
 
     return (
         <Routes>
