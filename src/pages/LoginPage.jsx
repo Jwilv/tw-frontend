@@ -16,7 +16,7 @@ export const LoginPage = () => {
     const [values, changeForm, reset] = useForm(initialState)
     const { email, password } = values
     console.log(values)
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault()
         if (password.length < 6) {
             return Swal.fire("Error", "la contraseña debe ser de minimo 6 caracteres", "error")

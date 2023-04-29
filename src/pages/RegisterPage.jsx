@@ -20,7 +20,7 @@ export const Registerpage = () => {
     const [values, changeForm ] = useForm(initialState)
     const { email, password, passwordConfirm, name } = values
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault()
         if (password.length < 6) {
             return Swal.fire("Error", "la contraseña debe ser de minimo 6 caracteres", "error")

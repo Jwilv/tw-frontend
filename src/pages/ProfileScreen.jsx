@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 import { Profile } from '../components/Profile';
 import { NavbarLayout } from '../components/NavbarLayout';
-import { getUserById } from '../helpers/getUserbyId';
 import { useDispatch } from 'react-redux';
 import { startDataProfile } from '../redux/profile.slice';
 
