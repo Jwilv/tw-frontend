@@ -10,6 +10,7 @@ const initialState = {
     banner: "",
     birthDate: "",
     surname: "",
+    biography:"",
 }
 
 const profileSlice = createSlice({

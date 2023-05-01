@@ -1,11 +1,29 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 export const ProfileInfo = () => {
+
+    const {
+        name,
+        surname,
+        id,
+        biography,
+        location,
+        birthDate,
+    } = useSelector(state => state.ProfileActive);
+
+    const host = 'http://localhost:8080'
+
+    const urlAvatar = `${host}/getAvatar?id=${id}`;
+
+    const urlBanner = `${host}/getBanner?id=${id}`;
+
+
     return (
         <div className='container-profileinfo'>
             <div className="profileinfo-user">
                 <div className="banner">
-                    <img src="https://tse3.mm.bing.net/th?id=OIP.MpAoLVf4y8Dt8v5ZDcyu3QHaCp&pid=Api&P=0"
+                    <img src={urlBanner}
                         alt="banner"
                         className='banner-img'
                     />
@@ -14,7 +32,7 @@ export const ProfileInfo = () => {
                 <div className="info">
 
                     <div className="img-profile">
-                        <img src="https://tse2.mm.bing.net/th?id=OIP.KrwtXzJJ9VXkvOX59pIEeQHaHi&pid=Api&P=0"
+                        <img src={urlAvatar}
                             alt="avatar"
                         />
                     </div>
@@ -22,13 +40,24 @@ export const ProfileInfo = () => {
                     <div className="container-bio-name">
 
                         <div className="name-profile">
-                            <strong>pedro <strong>faustino tercero</strong> </strong>
-                            <p> <i className="fa-solid fa-location-dot" style={{color: "#ffffff",}} />no se pa</p>
+                            <strong>{name} <strong>{surname}</strong> </strong>
+                            {
+                                (location)
+                                    ?
+                                    <p> <i className="fa-solid fa-location-dot" style={{ color: "#ffffff", }} />{location}</p>
+                                    : null
+                            }
                         </div>
 
                         <div className="bio-profile">
-                            <p className='date'><i className="fa-solid fa-calendar" style={{color: "#ffffff",}} />20/03/2003</p>
-                            <p>me gustan las peliculas y los jueguitos de pc, me dedico a insultar a las madres de mis compañeros de partida y irme afk</p>
+
+                            {
+                                (birthDate)
+                                    ?
+                                    <p className='date'><i className="fa-solid fa-calendar" style={{ color: "#ffffff", }} />{birthDate}</p>
+                                    : null
+                            }
+                            <p>{biography}</p>
                         </div>
 
                     </div>
