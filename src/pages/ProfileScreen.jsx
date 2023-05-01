@@ -13,6 +13,7 @@ export const ProfileScreen = () => {
 
     useEffect(() => {
       dispatch(startDataProfile(profileId))
+      
     }, [])
     
     
