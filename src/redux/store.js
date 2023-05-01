@@ -3,6 +3,7 @@ import authReducer from "./auth.slice"
 import uiReducer from "./ui.slice"
 import userReducer from "./user.slice"
 import profileReducer from "./profile.slice"
+import notesReducer from "./notes.slice"
 
 
 
@@ -12,5 +13,6 @@ export const store = configureStore({
         ui : uiReducer,
         user : userReducer,
         ProfileActive : profileReducer,
+        notes : notesReducer,
     }
 })
