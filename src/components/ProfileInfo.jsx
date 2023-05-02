@@ -1,29 +1,31 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router';
 
 export const ProfileInfo = () => {
 
     const {
         name,
         surname,
-        id,
         biography,
         location,
         birthDate,
     } = useSelector(state => state.ProfileActive);
 
-    const host = 'http://localhost:8080'
+    const { profileId } = useParams();
 
-    const urlAvatar = `${host}/getAvatar?id=${id}`;
+    const HOST = 'http://localhost:8080'
 
-    const urlBanner = `${host}/getBanner?id=${id}`;
+    const URL_AVATAR = `${HOST}/getAvatar?id=${profileId}`;
+
+    const URL_BANNER = `${HOST}/getBanner?id=${profileId}`;
 
 
     return (
         <div className='container-profileinfo'>
             <div className="profileinfo-user">
                 <div className="banner">
-                    <img src={urlBanner}
+                    <img src={URL_BANNER}
                         alt="banner"
                         className='banner-img'
                     />
@@ -32,7 +34,7 @@ export const ProfileInfo = () => {
                 <div className="info">
 
                     <div className="img-profile">
-                        <img src={urlAvatar}
+                        <img src={URL_AVATAR}
                             alt="avatar"
                         />
                     </div>
