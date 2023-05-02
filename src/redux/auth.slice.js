@@ -79,6 +79,7 @@ export const startRenew = () => {
                 checking: false,
                 looged: true,
             }))
+            console.log("buenasa")
             return true
         } catch (error) {
             console.log(error)
