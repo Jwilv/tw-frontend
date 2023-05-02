@@ -3,9 +3,9 @@ import { fetchToken } from "../helpers/fecht"
 
 
 const initialState = {
-    userNotes: {},
-    notes: {},
-    recommended: {},
+    userNotes: [],
+    notes: [],
+    recommended: [],
 }
 
 const notesSlice = createSlice({
@@ -31,7 +31,7 @@ export const startUploadUserNotes = (id,page) => {
         try {
             const res = await fetchToken(`getNotes?id=${id}&page=${page}`)
             console.log(res)
-            dispatch(addNotes({userNotes : {...res}}))
+            dispatch(addNotes({userNotes : [...res]}))
         } catch (error) {
 
         }
