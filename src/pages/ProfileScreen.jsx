@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { startDataProfile } from '../redux/profile.slice';
 import { startUploadUserNotes } from '../redux/notes.slice';
 
-export const ProfileScreen = () => {
+export const ProfileScreen =  () => {
 
     const { profileId } = useParams();
 
@@ -17,7 +17,7 @@ export const ProfileScreen = () => {
     }, [])
 
     useEffect(() => {
-        setTimeout(() => { dispatch(startUploadUserNotes(1)) }, 200)
+        dispatch(startUploadUserNotes(profileId,1))
     }, [])
 
 

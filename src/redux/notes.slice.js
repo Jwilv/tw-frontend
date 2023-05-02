@@ -26,10 +26,8 @@ const notesSlice = createSlice({
 
 const { addNotes, deleteNotes } = notesSlice.actions;
 
-export const startUploadUserNotes = (page) => {
-    return async (dispatch, getState) => {
-
-        const { id } = getState().ProfileActive;
+export const startUploadUserNotes = (id,page) => {
+    return async (dispatch) => {
         try {
             const res = await fetchToken(`getNotes?id=${id}&page=${page}`)
             console.log(res)
