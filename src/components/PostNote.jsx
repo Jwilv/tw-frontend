@@ -1,9 +1,21 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { useForm } from '../hooks/useForm'
 
 export const PostNote = () => {
 
-  const {name} = useSelector(state => state.user)
+  const [ value, changevalue, reset] = useForm({message : ""})
+
+  const {message} = value;
+
+  const { name } = useSelector(state => state.user)
+
+  console.log(message)
+
+
+  const handlePostNote = (event) => {
+    event.preventDefault()
+  }
   return (
     <div className="post-note-container">
       <div className="post-note-user">
@@ -14,8 +26,18 @@ export const PostNote = () => {
         <p>{name}</p>
       </div>
       <div className="post-note-input">
-        <input type="text" placeholder='queee soo ?' />
-        <button>Enviar</button>
+        <form onSubmit={handlePostNote} >
+
+          <input 
+          type="text" 
+          placeholder='que es lo que opinas ?' 
+          name='message'
+          value={message}
+          onChange={changevalue}
+          />
+          <button type='submit'>Enviar</button>
+        </form>
+
       </div>
     </div>
   )
