@@ -1,19 +1,19 @@
 import React from 'react'
 
-export const NotesUser = () => {
+export const NotesUser = ({userId,message,name}) => {
     return (
         <div className='notes-user-container'>
 
             <div className='notes-user-img'>
                 <img
-                    src="https://tse2.mm.bing.net/th?id=OIP.eAevlGw1UR_UqXA_2y-2tAHaHa&pid=Api&P=0"
+                    src={`http://localhost:8080/getAvatar?id=${userId}`}
                     alt="img user"
                     className='img-user'
                 />
             </div>
             <div className='notes-user-info'>
-                <p className='notes-user-name'>juan</p>
-                <p className='notes-user-note'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <p className='notes-user-name'>{name}</p>
+                <p className='notes-user-note'>{message}</p>
             </div>
         </div>
     )

@@ -3,8 +3,12 @@ import { NotesUser } from './NotesUser'
 import { PostNote } from './PostNote'
 import { ProfileInfo } from './ProfileInfo'
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router'
 
 export const Profile = () => {
+
+    const { profileId } = useParams();
+
 
 const {userNotes} = useSelector( state => state.notes)
 
@@ -16,7 +20,7 @@ const {userNotes} = useSelector( state => state.notes)
                     <PostNote />
                     {
                         userNotes.map( note => {
-                            return <NotesUser key={note._id}/>
+                            return <NotesUser userId={profileId}{...note} key={note._id}/>
                         })
                     } 
                 </div>
