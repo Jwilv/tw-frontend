@@ -28,6 +28,7 @@ const { addNotes, deleteNotes } = notesSlice.actions;
 
 export const startUploadUserNotes = (id,page) => {
     return async (dispatch) => {
+        console.log("estoy aca")
         try {
             const res = await fetchToken(`getNotes?id=${id}&page=${page}`)
             console.log(res)
@@ -35,6 +36,16 @@ export const startUploadUserNotes = (id,page) => {
         } catch (error) {
 
         }
+    }
+}
+
+export const startPostNote = (payload)=>{
+    return async(dispatch,state)=>{
+ try {
+    await fetchToken("saveNote",payload,"POST")
+ } catch (error) {
+    
+ }
     }
 }
 
