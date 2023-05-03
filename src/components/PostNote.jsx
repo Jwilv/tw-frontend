@@ -27,6 +27,11 @@ export const PostNote = () => {
     if(message.length > 250){
       return Swal.fire("Error","se permiten maximo 250 caracteres","error")
     }
+    const payload = {
+      message,
+      name,
+    }
+    reset()
   }
   return (
     <div className="post-note-container">
