@@ -28,7 +28,7 @@ export const AppRouter = () => {
         return (<Spinner />)
     }
 
-    
+
     return (
         <Routes>
             <Route path="/" element={
@@ -58,6 +58,12 @@ export const AppRouter = () => {
             <Route path="/search" element={
                 <PrivateRouter logged={looged} >
                     <SearchUsersPage />
+                </PrivateRouter>}
+            />
+
+            <Route path="/changeProfile" element={
+                <PrivateRouter logged={looged} >
+                    <ChangeProfile />
                 </PrivateRouter>}
             />
         </Routes>

@@ -42,7 +42,7 @@ export const ProfileInfo = () => {
 
                     <div className="change">
                         {
-                            (false)
+                            (true)
                         ? <Link to={"/changeProfile"}><i className="fa-solid fa-user-pen" style={{color: "#ffffff",}} /></Link>
                         : <FollowUnfollowButton />
                         }
