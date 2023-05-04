@@ -4,9 +4,9 @@ export const FollowUnfollowButton = () => {
     return (
         <div>
             {
-                (true)
-                    ? <button>Seguir</button>
-                    : <button>Dejar de Seguir</button>
+                (false)
+                    ? <button className='button-profile follow'>Follow</button>
+                    : <button className='button-profile unfollow'>Unfollow</button>
             }
         </div>
     )

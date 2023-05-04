@@ -127,3 +127,24 @@ overflow-x: hidden;
         font-size: 25px;
     }
 }
+
+.button-profile{
+    width: 100px;
+    height: auto;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 100px;
+}
+
+.follow{
+    border: none;
+    background-color: #71c9f8;
+    color: #fff;
+}
+
+.unfollow{
+    border: none;
+    background-color: #ec2c22;
+    color: #fff;
+}
