@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router';
+import { FollowUnfollowButton } from './FollowUnfollowButton';
+import { Link } from 'react-router-dom';
 
 export const ProfileInfo = () => {
 
@@ -30,13 +32,20 @@ export const ProfileInfo = () => {
                         className='banner-img'
                     />
                 </div>
-
                 <div className="info">
 
                     <div className="img-profile">
                         <img src={URL_AVATAR}
                             alt="avatar"
                         />
+                    </div>
+
+                    <div className="change">
+                        {
+                            (false)
+                        ? <Link to={"/changeProfile"}><i className="fa-solid fa-user-pen" style={{color: "#ffffff",}} /></Link>
+                        : <FollowUnfollowButton />
+                        }
                     </div>
 
                     <div className="container-bio-name">
