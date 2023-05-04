@@ -30,6 +30,9 @@ export const PostNote = () => {
     if (message.length > 250) {
       return Swal.fire("Error", "se permiten maximo 250 caracteres", "error")
     }
+    if (message.replace(/\s+/g, '').length === 0) {
+      return Swal.fire("Error", "el mensaje no puede estar vacio", "error")
+    }
     const payload = {
       message,
       name,
@@ -53,7 +56,7 @@ export const PostNote = () => {
         <p>{name}</p>
       </div>
       <div className="post-note-input">
-        <p>{Counter}</p>
+        <p className='counter'>{Counter}</p>
 
         <form onSubmit={handlePostNote} >
 
