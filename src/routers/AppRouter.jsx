@@ -11,6 +11,7 @@ import { Spinner } from "../pages/Spinner"
 import { ProfileScreen } from "../pages/ProfileScreen"
 import { SearchUsersPage } from "../pages/SearchUsersPage"
 import { startUserData } from "../redux/user.slice"
+import { ChangeProfilePage } from "../pages/ChangeProfilePage"
 
 
 export const AppRouter = () => {
@@ -63,7 +64,7 @@ export const AppRouter = () => {
 
             <Route path="/changeProfile" element={
                 <PrivateRouter logged={looged} >
-                    <ChangeProfile />
+                    <ChangeProfilePage />
                 </PrivateRouter>}
             />
         </Routes>
