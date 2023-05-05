@@ -1,10 +1,10 @@
 import React from 'react'
-import { ChangeBanner } from '../components/ChangeBanner'
+import { ChangeInfo } from '../components/ChangeInfo'
 
 export const ChangeProfilePage = () => {
     return (
         <div>
-            <ChangeBanner />
+            <ChangeInfo />
         </div>
     )
 }
