@@ -6,7 +6,7 @@ export const ChangeInfo = () => {
 
             <div className="input-banner">
                 <label htmlFor="banner-input">
-                <img src="https://tse4.mm.bing.net/th?id=OIP.mki6JUTwrGo5AldrftXfAgHaCp&pid=Api&P=0" alt="banner" />
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.mki6JUTwrGo5AldrftXfAgHaCp&pid=Api&P=0" alt="banner" />
                 </label>
                 <input id='banner-input' type="file" />
             </div>
@@ -15,12 +15,25 @@ export const ChangeInfo = () => {
 
             <div className="input-avatar">
                 <label htmlFor="avatar-input">
-                <img src="https://tse4.mm.bing.net/th?id=OIP.mki6JUTwrGo5AldrftXfAgHaCp&pid=Api&P=0" alt="banner" />
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.mki6JUTwrGo5AldrftXfAgHaCp&pid=Api&P=0" alt="banner" />
                 </label>
                 <input id='avatar-input' type="file" />
             </div>
 
             <div className="action-buton"> <button>Update Avatar</button></div>
+
+            <div className="container-form-data">
+                <div className="card-form">
+                    <form>
+
+                        <div className="card-form-input">
+                            
+                        </div>
+
+                        <div className="action-buton"> <button>Update Avatar</button></div>
+                    </form>
+                </div>
+            </div>
 
         </div>
     )
