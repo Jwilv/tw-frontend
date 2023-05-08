@@ -27,6 +27,17 @@ export const ChangeInfo = () => {
                     <form>
 
                         <div className="card-form-input">
+
+                            <div className="right">
+                                <input className='input-change' type="text" placeholder='Name' />
+                                <input className='input-change' type="text" placeholder='SurName' />
+                                <input className='input-change' type="text" placeholder='>Bio' />
+                            </div>
+
+                            <div className="left">
+                                <input className='input-change' type="text"  placeholder='location'/>
+                                <input className='input-change' type="text" placeholder='date' />
+                            </div>
                             
                         </div>
 
