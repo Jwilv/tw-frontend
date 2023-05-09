@@ -36,7 +36,7 @@ export const ChangeInfo = () => {
 
                             <div className="left">
                                 <input className='input-change' type="text"  placeholder='location'/>
-                                <input className='input-change' type="text" placeholder='date' />
+                                <input className='input-change' type="date" placeholder='date' />
                             </div>
                             
                         </div>
