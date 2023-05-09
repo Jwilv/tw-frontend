@@ -1,13 +1,17 @@
 import React from 'react'
 import { useForm } from '../hooks/useForm'
+import moment from 'moment/moment'
 
 export const ChangeInfo = () => {
+
 
     const [value, changeValue] = useForm({ date : ""})
 
     const {date} = value;
 
-    console.log(date)
+    const dateM = moment(date)
+
+    console.log(dateM.format("DD/MM/YYYY"))
     const handleSubmit = (event)=>{
         event.preventDefault()
     }
