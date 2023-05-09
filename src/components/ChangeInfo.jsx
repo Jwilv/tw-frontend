@@ -1,6 +1,16 @@
 import React from 'react'
+import { useForm } from '../hooks/useForm'
 
 export const ChangeInfo = () => {
+
+    const [value, changeValue] = useForm({ date : ""})
+
+    const {date} = value;
+
+    console.log(date)
+    const handleSubmit = (event)=>{
+        event.preventDefault()
+    }
     return (
         <div className='container-change'>
 
@@ -24,7 +34,7 @@ export const ChangeInfo = () => {
 
             <div className="container-form-data">
                 <div className="card-form">
-                    <form>
+                    <form onSubmit={handleSubmit}>
 
                         <div className="card-form-input">
 
@@ -36,7 +46,14 @@ export const ChangeInfo = () => {
 
                             <div className="left">
                                 <input className='input-change' type="text"  placeholder='location'/>
-                                <input className='input-change' type="date" placeholder='date' />
+                                <input 
+                                className='input-change' 
+                                type="date" 
+                                placeholder='date'
+                                name='date'
+                                value={date}
+                                onChange={changeValue}
+                                />
                             </div>
                             
                         </div>
