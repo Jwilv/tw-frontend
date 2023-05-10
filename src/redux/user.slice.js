@@ -28,4 +28,10 @@ export const startUserData = ()=>{
     }
 }
 
+export const startUpdateName = (name)=>{
+    return (dispatch)=>{
+        dispatch(userData({name}))
+    }
+}
+
 export default userSlice.reducer ;

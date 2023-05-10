@@ -5,7 +5,6 @@ import { NavbarLayout } from '../components/NavbarLayout';
 import { useDispatch } from 'react-redux';
 import { startDataProfile } from '../redux/profile.slice';
 import { startUploadUserNotes } from '../redux/notes.slice';
-
 export const ProfileScreen =  () => {
 
     const { profileId } = useParams();

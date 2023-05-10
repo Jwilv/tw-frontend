@@ -1,21 +1,25 @@
 import React from 'react'
 import { useForm } from '../hooks/useForm'
-import moment from 'moment/moment'
 import Swal from 'sweetalert2'
+import { updateDataProfile } from '../helpers/UpdateDataProfile'
+import { useDispatch } from 'react-redux'
+import { startUpdateName } from '../redux/user.slice'
 
 export const ChangeInfo = () => {
 
     const initialState = {
-        date: "",
+        birthDate: "",
         name: "",
         surname: "",
         location: "",
         biography: "",
     }
 
+    const dispatch = useDispatch()
+
     const [value, changeValue] = useForm(initialState)
 
-    const { date, name, surname, location, biography } = value;
+    const { birthDate, name, surname, location, biography } = value;
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -23,18 +27,18 @@ export const ChangeInfo = () => {
         for (let propiedad in value) {
             if (value.hasOwnProperty(propiedad)) {
                 if (value[propiedad].trim() === '') {
-                    return Swal.fire('error',"se necesita completar todos los campos","error")
+                    return Swal.fire('error', "se necesita completar todos los campos", "error")
                 }
             }
         }
 
-        const data = {...value}
-        data.date = new Date(date)
-        console.log(data.date)
+        const data = { ...value }
+        data.birthDate = new Date(birthDate)
+        delete data.birthDate
 
-        
+        await updateDataProfile(data)
 
-        
+        dispatch(startUpdateName(data.name))
     }
     return (
         <div className='container-change'>
@@ -103,8 +107,8 @@ export const ChangeInfo = () => {
                                     className='input-change'
                                     type="date"
                                     placeholder='date'
-                                    name='date'
-                                    value={date}
+                                    name='birthDate'
+                                    value={birthDate}
                                     onChange={changeValue}
                                 />
                             </div>
