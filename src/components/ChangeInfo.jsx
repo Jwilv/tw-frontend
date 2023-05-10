@@ -1,26 +1,40 @@
 import React from 'react'
 import { useForm } from '../hooks/useForm'
 import moment from 'moment/moment'
+import Swal from 'sweetalert2'
 
 export const ChangeInfo = () => {
 
     const initialState = {
-         date : "",
-         name:"",
-         surname:"",
-         location : "",
-         biography:"",
+        date: "",
+        name: "",
+        surname: "",
+        location: "",
+        biography: "",
+    }
+
+    const [value, changeValue] = useForm(initialState)
+
+    const { date, name, surname, location, biography } = value;
+
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+
+        for (let propiedad in value) {
+            if (value.hasOwnProperty(propiedad)) {
+                if (value[propiedad].trim() === '') {
+                    return Swal.fire('error',"se necesita completar todos los campos","error")
+                }
+            }
         }
 
-    const [value, changeValue] = useForm()
+        const data = {...value}
+        data.date = new Date(date)
+        console.log(data.date)
 
-    const {date, name, surname, location} = value;
+        
 
-    const dateM = moment(date)
-
-    console.log(dateM.format("DD/MM/YYYY"))
-    const handleSubmit = (event)=>{
-        event.preventDefault()
+        
     }
     return (
         <div className='container-change'>
@@ -50,30 +64,51 @@ export const ChangeInfo = () => {
                         <div className="card-form-input">
 
                             <div className="right">
-                                <input className='input-change' type="text" placeholder='Name' />
-                                <input className='input-change' type="text" placeholder='SurName' />
-                                <input className='input-change' type="text" placeholder='>Bio' />
+                                <input
+                                    className='input-change'
+                                    type="text"
+                                    placeholder='Name'
+                                    name='name'
+                                    value={name}
+                                    onChange={changeValue}
+                                />
+                                <input
+                                    className='input-change'
+                                    type="text"
+                                    placeholder='SurName'
+                                    name='surname'
+                                    value={surname}
+                                    onChange={changeValue}
+                                />
+                                <input
+                                    className='input-change'
+                                    type="text"
+                                    placeholder='>Bio'
+                                    name='biography'
+                                    value={biography}
+                                    onChange={changeValue}
+                                />
                             </div>
 
                             <div className="left">
-                                <input 
-                                className='input-change' 
-                                type="text"  
-                                placeholder='location'
-                                name='location'
-                                value={location}
-                                onChange={changeValue}
+                                <input
+                                    className='input-change'
+                                    type="text"
+                                    placeholder='location'
+                                    name='location'
+                                    value={location}
+                                    onChange={changeValue}
                                 />
-                                <input 
-                                className='input-change' 
-                                type="date" 
-                                placeholder='date'
-                                name='date'
-                                value={date}
-                                onChange={changeValue}
+                                <input
+                                    className='input-change'
+                                    type="date"
+                                    placeholder='date'
+                                    name='date'
+                                    value={date}
+                                    onChange={changeValue}
                                 />
                             </div>
-                            
+
                         </div>
 
                         <div className="action-buton"> <button>Update Avatar</button></div>
