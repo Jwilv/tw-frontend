@@ -4,10 +4,17 @@ import moment from 'moment/moment'
 
 export const ChangeInfo = () => {
 
+    const initialState = {
+         date : "",
+         name:"",
+         surname:"",
+         location : "",
+         biography:"",
+        }
 
-    const [value, changeValue] = useForm({ date : ""})
+    const [value, changeValue] = useForm()
 
-    const {date} = value;
+    const {date, name, surname, location} = value;
 
     const dateM = moment(date)
 
@@ -49,7 +56,14 @@ export const ChangeInfo = () => {
                             </div>
 
                             <div className="left">
-                                <input className='input-change' type="text"  placeholder='location'/>
+                                <input 
+                                className='input-change' 
+                                type="text"  
+                                placeholder='location'
+                                name='location'
+                                value={location}
+                                onChange={changeValue}
+                                />
                                 <input 
                                 className='input-change' 
                                 type="date" 
