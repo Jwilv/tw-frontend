@@ -1,10 +1,13 @@
 import React from 'react'
 import { ChangeInfo } from '../components/ChangeInfo'
+import { NavbarLayout } from '../components/NavbarLayout'
 
 export const ChangeProfilePage = () => {
     return (
         <div>
-            <ChangeInfo />
+            <NavbarLayout >
+                <ChangeInfo />
+            </NavbarLayout>
         </div>
     )
 }
