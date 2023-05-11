@@ -56,7 +56,7 @@ export const fetchTokenUploadFile = async (endpoint, data, name) => {
     const token = localStorage.getItem('token')
 
     const formData = new FormData();
-    formData.append("avatar", data);
+    formData.append(name, data);
 
     const resp = await fetch(url, {
         method: 'POST',
