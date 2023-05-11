@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from '../hooks/useForm'
 import Swal from 'sweetalert2'
-import { updateDataProfile } from '../helpers/UpdateDataProfile'
+import { updateDataProfile } from '../helpers/updateDataProfile'
 import { useDispatch } from 'react-redux'
 import { startUpdateName } from '../redux/user.slice'
 import { fetchTokenUploadFile } from '../helpers/fecht'
@@ -25,6 +25,14 @@ export const ChangeInfo = () => {
 
     const handleUpdateAvatar = async()=>{
         await fetchTokenUploadFile('updateAvatar',fileAvatar,'avatar')
+    }
+
+    const handleBannerFile = (event)=>{
+        fileBanner = event.target.files[0];
+    }
+
+    const handleUpdateBanner = async()=>{
+        await fetchTokenUploadFile('updateBanner',fileBanner,'banner')
     }
 
     const dispatch = useDispatch()
@@ -62,10 +70,11 @@ export const ChangeInfo = () => {
                 <input 
                 id='banner-input' 
                 type="file" 
+                onChange={ handleBannerFile}
                 />
             </div>
 
-            <div className="action-buton"> <button>Update Banner</button></div>
+            <div className="action-buton"> <button onClick={handleUpdateBanner}>Update Banner</button></div>
 
             <div className="input-avatar">
                 <label htmlFor="avatar-input">
