@@ -44,6 +44,9 @@ export const fetchToken = async (endpoint, data, method = "GET") => {
             body: JSON.stringify(data)
         })
 
+        if(!resp.body.locked){
+            return
+        }
         return await resp.json()
     }
 
