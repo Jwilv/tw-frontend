@@ -4,7 +4,7 @@ import Swal from 'sweetalert2'
 import { updateDataProfile } from '../helpers/UpdateDataProfile'
 import { useDispatch } from 'react-redux'
 import { startUpdateName } from '../redux/user.slice'
-import { fetchToken, fetchTokenUploadFile } from '../helpers/fecht'
+import { fetchTokenUploadFile } from '../helpers/fecht'
 
 export const ChangeInfo = () => {
 
@@ -16,10 +16,15 @@ export const ChangeInfo = () => {
         biography: "",
     }
 
-    const handleAvatarFile = async(event)=>{
-        const fileAvatar = event.target.files[0];
+    let fileAvatar = null ;
+    let fileBanner = null ;
 
-        const resp = await fetchTokenUploadFile('updateAvatar',fileAvatar,'avatar')
+    const handleAvatarFile = (event)=>{
+        fileAvatar = event.target.files[0];
+    }
+
+    const handleUpdateAvatar = async()=>{
+        await fetchTokenUploadFile('updateAvatar',fileAvatar,'avatar')
     }
 
     const dispatch = useDispatch()
@@ -73,7 +78,7 @@ export const ChangeInfo = () => {
                 />
             </div>
 
-            <div className="action-buton"> <button>Update Avatar</button></div>
+            <div className="action-buton"> <button onClick={handleUpdateAvatar}>Update Avatar</button></div>
 
             <div className="container-form-data">
                 <div className="card-form">
