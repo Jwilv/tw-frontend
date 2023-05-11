@@ -4,7 +4,7 @@ import Swal from 'sweetalert2'
 import { updateDataProfile } from '../helpers/UpdateDataProfile'
 import { useDispatch } from 'react-redux'
 import { startUpdateName } from '../redux/user.slice'
-import { fetchToken } from '../helpers/fecht'
+import { fetchToken, fetchTokenUploadFile } from '../helpers/fecht'
 
 export const ChangeInfo = () => {
 
@@ -18,12 +18,8 @@ export const ChangeInfo = () => {
 
     const handleAvatarFile = async(event)=>{
         const fileAvatar = event.target.files[0];
-        const avatar = new FormData();
-        avatar.append('avatar', fileAvatar);
 
-        await fetchToken('updateAvatar',avatar,'POST')
-        .then( ()=> { console.log("bien pa") })
-        .catch( err => console.log(err))
+        const resp = await fetchTokenUploadFile('updateAvatar',fileAvatar,'avatar')
     }
 
     const dispatch = useDispatch()

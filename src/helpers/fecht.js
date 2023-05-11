@@ -49,3 +49,25 @@ export const fetchToken = async (endpoint, data, method = "GET") => {
     }
 
 }
+
+//en name va el nombre avatar o banner
+export const fetchTokenUploadFile = async (endpoint, data, name) => {
+    const url = `${baseUrl}/${endpoint}`
+    const token = localStorage.getItem('token')
+
+    const formData = new FormData();
+    formData.append("avatar", data);
+
+    const resp = await fetch(url, {
+        method: 'POST',
+        headers: {
+            "x-token": token
+        },
+        body: formData
+    })
+        .then(() => { return true})
+        .catch((err) => {
+            console.log(err)
+            return false
+        })
+}
