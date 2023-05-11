@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from '../hooks/useForm'
 import Swal from 'sweetalert2'
 import { updateDataProfile } from '../helpers/UpdateDataProfile'
 import { useDispatch } from 'react-redux'
 import { startUpdateName } from '../redux/user.slice'
+import { fetchToken } from '../helpers/fecht'
 
 export const ChangeInfo = () => {
 
@@ -13,6 +14,16 @@ export const ChangeInfo = () => {
         surname: "",
         location: "",
         biography: "",
+    }
+
+    const handleAvatarFile = async(event)=>{
+        const fileAvatar = event.target.files[0];
+        const avatar = new FormData();
+        avatar.append('avatar', fileAvatar);
+
+        await fetchToken('updateAvatar',avatar,'POST')
+        .then( ()=> { console.log("bien pa") })
+        .catch( err => console.log(err))
     }
 
     const dispatch = useDispatch()
@@ -47,7 +58,10 @@ export const ChangeInfo = () => {
                 <label htmlFor="banner-input">
                     <img src="https://tse4.mm.bing.net/th?id=OIP.mki6JUTwrGo5AldrftXfAgHaCp&pid=Api&P=0" alt="banner" />
                 </label>
-                <input id='banner-input' type="file" />
+                <input 
+                id='banner-input' 
+                type="file" 
+                />
             </div>
 
             <div className="action-buton"> <button>Update Banner</button></div>
@@ -56,7 +70,11 @@ export const ChangeInfo = () => {
                 <label htmlFor="avatar-input">
                     <img src="https://tse4.mm.bing.net/th?id=OIP.mki6JUTwrGo5AldrftXfAgHaCp&pid=Api&P=0" alt="banner" />
                 </label>
-                <input id='avatar-input' type="file" />
+                <input 
+                id='avatar-input' 
+                type="file" 
+                onChange={handleAvatarFile}
+                />
             </div>
 
             <div className="action-buton"> <button>Update Avatar</button></div>
