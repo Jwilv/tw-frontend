@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from '../hooks/useForm'
 import Swal from 'sweetalert2'
 import { updateDataProfile } from '../helpers/updateDataProfile'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { startUpdateName } from '../redux/user.slice'
 import { fetchTokenUploadFile } from '../helpers/fecht'
+import { startDataProfile } from '../redux/profile.slice'
 
 export const ChangeInfo = () => {
+    const {_id} = useSelector( state => state.user)
+
+    useEffect(() => {
+        dispatch(startDataProfile(_id))
+    }, [])
+
+
+    const DefaultImg = "https://th.bing.com/th/id/OIP.RCsJuL8ajvvtswlrSZinpQHaEo?w=302&h=187&c=7&r=0&o=5&pid=1.7"
+
+    const {avatar, banner} = useSelector( state => state.ProfileActive)
+
 
     const initialState = {
         birthDate: "",
@@ -24,6 +36,9 @@ export const ChangeInfo = () => {
     }
 
     const handleUpdateAvatar = async()=>{
+        if(fileAvatar === null ){
+            return Swal.fire("Error","se requiere un archivo","error")
+        }
         await fetchTokenUploadFile('updateAvatar',fileAvatar,'avatar')
     }
 
@@ -32,6 +47,10 @@ export const ChangeInfo = () => {
     }
 
     const handleUpdateBanner = async()=>{
+
+        if(fileBanner === null ){
+            return Swal.fire("Error","se requiere un archivo","error")
+        }
         await fetchTokenUploadFile('updateBanner',fileBanner,'banner')
     }
 
@@ -69,7 +88,11 @@ export const ChangeInfo = () => {
 
             <div className="input-banner">
                 <label htmlFor="banner-input">
-                    <img src="https://tse4.mm.bing.net/th?id=OIP.mki6JUTwrGo5AldrftXfAgHaCp&pid=Api&P=0" alt="banner" />
+                    <img src={
+                        (banner.length > 0)
+                        ? `http://localhost:8080/getBanner?id=${_id}`
+                        : DefaultImg
+                    } alt="banner" />
                 </label>
                 <input 
                 id='banner-input' 
@@ -82,7 +105,11 @@ export const ChangeInfo = () => {
 
             <div className="input-avatar">
                 <label htmlFor="avatar-input">
-                    <img src="https://tse4.mm.bing.net/th?id=OIP.mki6JUTwrGo5AldrftXfAgHaCp&pid=Api&P=0" alt="banner" />
+                <img src={
+                        (avatar.length > 0)
+                        ? `http://localhost:8080/getAvatar?id=${_id}`
+                        : DefaultImg
+                    } alt="banner" />
                 </label>
                 <input 
                 id='avatar-input' 

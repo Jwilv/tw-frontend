@@ -1,3 +1,4 @@
+import Swal from "sweetalert2"
 
 // const baseUrl = import.meta.env.VITE_APP_URL_API
 const baseUrl = "http://localhost:8080"
@@ -68,9 +69,8 @@ export const fetchTokenUploadFile = async (endpoint, data, name) => {
         },
         body: formData
     })
-        .then(() => { return true})
+        .then(() => { return Swal.fire("acept","actualizacion correcta","success")})
         .catch((err) => {
-            console.log(err)
-            return false
+            return Swal.fire("Error",err,"error")
         })
 }
