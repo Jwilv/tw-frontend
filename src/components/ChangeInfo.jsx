@@ -61,6 +61,8 @@ export const ChangeInfo = () => {
         dispatch(startUpdateName(data.name))
 
         reset()
+
+        return Swal.fire("acept","actualizacion correcta","success")
     }
     return (
         <div className='container-change'>
