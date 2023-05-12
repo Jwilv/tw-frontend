@@ -37,7 +37,7 @@ export const ChangeInfo = () => {
 
     const dispatch = useDispatch()
 
-    const [value, changeValue] = useForm(initialState)
+    const [value, changeValue, reset] = useForm(initialState)
 
     const { birthDate, name, surname, location, biography } = value;
 
@@ -59,6 +59,8 @@ export const ChangeInfo = () => {
         await updateDataProfile(data)
 
         dispatch(startUpdateName(data.name))
+
+        reset()
     }
     return (
         <div className='container-change'>
