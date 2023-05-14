@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     suggestions: false,
     home: true,
+    follow:true,
+    new:false,
 }
 const uiSlice = createSlice({
     name: "ui",
@@ -20,6 +22,20 @@ const uiSlice = createSlice({
                 ...state,
                 suggestions: true,
                 home: false,
+            }
+        },
+        openFollow : ()=>{
+            return{
+                ...state,
+                follow:true,
+                new:false,
+            }
+        },
+        openNew: ()=>{
+            return{
+                ...state,
+                new:true,
+                follow:false,
             }
         }
     }
