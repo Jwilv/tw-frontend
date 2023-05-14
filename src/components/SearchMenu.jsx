@@ -1,5 +1,6 @@
 import React from 'react'
 import { ProfileCard } from './ProfileCard'
+import { BarSelectionSearch } from './BarSelectionSearch'
 
 export const SearchMenu = () => {
     return (
@@ -22,6 +23,8 @@ export const SearchMenu = () => {
                     </form>
                 </div>
             </div>
+
+            <BarSelectionSearch />
 
             <div className="container-search-users">
                 <ProfileCard />
