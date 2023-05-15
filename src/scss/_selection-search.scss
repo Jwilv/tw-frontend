@@ -1,0 +1,21 @@
+.Container-SelectionSearch {
+    width: 100vw;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .follow-search {
+        padding: 30px;
+        margin-left: -10px;
+        border-right: 1px #454545 solid;
+        cursor: pointer;
+    }
+
+    .new-search {
+        cursor: pointer;
+        padding: 30px;
+    }
+
+}
