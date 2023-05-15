@@ -1,5 +1,4 @@
 import React from 'react'
-import { ProfileCard } from './ProfileCard'
 import { BarSelectionSearch } from './BarSelectionSearch'
 import { SearchsProfiles } from './SearchsProfiles'
 
