@@ -7,25 +7,25 @@ export const BarSelectionSearch = () => {
 
     const dispatch = useDispatch()
 
-    const {follow} = useSelector( state => state.ui)
+    const { follow } = useSelector(state => state.ui)
 
-    const handleFollowMenu = ()=>{
+    const handleFollowMenu = () => {
         dispatch(openFollow())
     }
 
-    const handleNewMenu = ()=>{
+    const handleNewMenu = () => {
         dispatch(openNew())
-        dispatch(startAddUsersInList(1,"new"))
+        dispatch(startAddUsersInList(1, "new"))
     }
 
-  return (
-    <div className='Container-SelectionSearch'>
-        <div className={`follow-search ${follow ? "active" : "not-active"}`} onClick={handleFollowMenu}>
-            <p>Follow</p>
+    return (
+        <div className='Container-SelectionSearch'>
+            <div className={`follow-search ${follow ? "active" : "not-active"}`} onClick={handleFollowMenu}>
+                <p>Follow</p>
+            </div>
+            <div className={`new-search ${!follow ? "active" : "not-active"}`} onClick={handleNewMenu} >
+                <p>New</p>
+            </div>
         </div>
-        <div className={`new-search ${ !follow ? "active" : "not-active"}`}onClick={handleNewMenu} >
-        <p>New</p>
-        </div>
-    </div>
-  )
+    )
 }
