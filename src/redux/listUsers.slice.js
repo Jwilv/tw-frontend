@@ -28,11 +28,14 @@ const listUsersSlice = createSlice({
 const {addSearchUsers, deleteSearchUsers} = listUsersSlice.actions;
 
 export const startAddUsersInList = (page = 1, type = 'new',search = '')=>{
-    return async(dispatch)=>{
+    return async(dispatch, getState)=>{
+
+        const { _id } = getState().user;
         try {
             dispatch(deleteSearchUsers())
             const resp = await fetchToken(`getUsers?page=${page}&type=${type}&search=${search}`)
-            dispatch(addSearchUsers([...resp]))
+            const filterUsers = resp.filter( user=> user.id !== _id)
+            dispatch(addSearchUsers([...filterUsers]))
         } catch (error) {
             console.log(error)
         }
