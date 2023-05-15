@@ -15,6 +15,6 @@ export const store = configureStore({
         user : userReducer,
         ProfileActive : profileReducer,
         notes : notesReducer,
-        listusers : listUsersReducer,
+        listUsers : listUsersReducer,
     }
 })
