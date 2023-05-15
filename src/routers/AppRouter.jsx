@@ -18,6 +18,7 @@ export const AppRouter = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(startRenew())
+        dispatch(startUserData())
     }, [])
 
 
