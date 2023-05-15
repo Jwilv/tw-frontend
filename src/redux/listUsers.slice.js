@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const listUsersSlice = createSlice({
-    name:listUsers,
+    name: "listUsers",
     initialState,
     reducers:{
         addSearchUsers : (state,action)=>{

@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchToken, fetchWithoToken } from "../helpers/fecht";
+import { startUserData } from "./user.slice";
 
 const initialState = {
     checking: true,
@@ -79,6 +80,7 @@ export const startRenew = () => {
                 checking: false,
                 looged: true,
             }))
+            dispatch(startUserData())
             console.log("buenasa")
             return true
         } catch (error) {
