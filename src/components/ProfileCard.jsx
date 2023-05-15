@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { ImgProfileCard } from './ImgProfileCard'
 export const ProfileCard = ({ id, name, surname }) => {
 
     return (
@@ -7,7 +8,7 @@ export const ProfileCard = ({ id, name, surname }) => {
 
             <div className='card-Profile'>
 
-
+<ImgProfileCard id={id}/>
                 <strong>{name} {surname}</strong>
 
             </div>

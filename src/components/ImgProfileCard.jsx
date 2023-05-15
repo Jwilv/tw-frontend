@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const ImgProfileCard = () => {
+export const ImgProfileCard = ({id}) => {
 
     const defaultAvatar = "https://tse2.mm.bing.net/th?id=OIP.eAevlGw1UR_UqXA_2y-2tAHaHa&pid=Api&P=0";
 
