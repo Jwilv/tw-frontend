@@ -4,13 +4,12 @@ import { useSelector } from 'react-redux'
 
 export const SearchsProfiles = () => {
 
-    const {} = useSelector( state => state.listUsers)
+    const { searchUsers } = useSelector(state => state.listUsers)
     return (
         <div className="container-search-users">
-            <ProfileCard />
-            <ProfileCard />
-            <ProfileCard />
-            <ProfileCard />
+            {searchUsers.map((user) => {
+                return <ProfileCard  key={user.id}/> 
+            })}
         </div>
     )
 }
