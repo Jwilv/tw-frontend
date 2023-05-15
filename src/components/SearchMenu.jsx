@@ -10,7 +10,7 @@ export const SearchMenu = () => {
 
                 <div className="input-search">
                     <form className="form">
-                        <label for="search">
+                        <label htmlFor="search">
                             <input className="input" type="text" required="" placeholder="Search" id="search" />
                             <div className="fancy-bg"></div>
                             <div className="search">
