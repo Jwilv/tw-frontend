@@ -24,23 +24,23 @@ const uiSlice = createSlice({
                 home: false,
             }
         },
-        openFollow : ()=>{
+        openFollow : (state)=>{
             return{
                 ...state,
                 follow:true,
                 new:false,
             }
         },
-        openNew: ()=>{
+        openNew: (state)=>{
             return{
                 ...state,
-                new:true,
                 follow:false,
+                new:true,
             }
         }
     }
 })
 
-export const { openMenu, openSuggestions } = uiSlice.actions
+export const { openMenu, openSuggestions, openFollow, openNew } = uiSlice.actions
 
 export default uiSlice.reducer;
