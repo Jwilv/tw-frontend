@@ -8,7 +8,7 @@ export const SearchsProfiles = () => {
     return (
         <div className="container-search-users">
             {searchUsers.map((user) => {
-                return <ProfileCard  key={user.id}/> 
+                return <ProfileCard {...user}  key={user.id}/> 
             })}
         </div>
     )
