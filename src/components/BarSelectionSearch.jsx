@@ -11,6 +11,7 @@ export const BarSelectionSearch = () => {
 
     const handleFollowMenu = () => {
         dispatch(openFollow())
+        dispatch(startAddUsersInList(1, "follow"))
     }
 
     const handleNewMenu = () => {

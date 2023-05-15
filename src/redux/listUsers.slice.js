@@ -30,6 +30,7 @@ const {addSearchUsers, deleteSearchUsers} = listUsersSlice.actions;
 export const startAddUsersInList = (page = 1, type = 'new',search = '')=>{
     return async(dispatch)=>{
         try {
+            dispatch(deleteSearchUsers())
             const resp = await fetchToken(`getUsers?page=${page}&type=${type}&search=${search}`)
             dispatch(addSearchUsers([...resp]))
         } catch (error) {
