@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { fetchToken } from "../helpers/fecht";
 
 
 const initialState = {
@@ -25,5 +26,17 @@ const listUsersSlice = createSlice({
 });
 
 const {addSearchUsers, deleteSearchUsers} = listUsersSlice.actions;
+
+export const startAddUsersInList = (page = 1, type = 'new',search = '')=>{
+    return async(dispatch)=>{
+        try {
+            const resp = await fetchToken(`getUsers?page=${page}&type=${type}&search=${search}`)
+            dispatch(addSearchUsers([...resp]))
+        } catch (error) {
+            console.log(error)
+        }
+        
+    }
+}
 
 export default listUsersSlice.reducer;

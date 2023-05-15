@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { openFollow, openNew } from '../redux/ui.slice'
+import { startAddUsersInList } from '../redux/listUsers.slice'
 
 export const BarSelectionSearch = () => {
 
@@ -14,6 +15,7 @@ export const BarSelectionSearch = () => {
 
     const handleNewMenu = ()=>{
         dispatch(openNew())
+        dispatch(startAddUsersInList(1,"new"))
     }
 
   return (
