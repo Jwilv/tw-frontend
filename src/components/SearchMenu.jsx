@@ -1,6 +1,7 @@
 import React from 'react'
 import { ProfileCard } from './ProfileCard'
 import { BarSelectionSearch } from './BarSelectionSearch'
+import { SearchsProfiles } from './SearchsProfiles'
 
 export const SearchMenu = () => {
     return (
@@ -25,14 +26,7 @@ export const SearchMenu = () => {
             </div>
 
             <BarSelectionSearch />
-
-            <div className="container-search-users">
-                <ProfileCard />
-                <ProfileCard />
-                <ProfileCard />
-                <ProfileCard />
-                
-            </div>
+            <SearchsProfiles />
         </div>
     )
 }
