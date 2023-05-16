@@ -18,13 +18,16 @@ const notesSlice = createSlice({
                 ...action.payload
             }
         },
-        deleteNotes: () => {
-            return initialState
+        deleteNotesUser: (state) => {
+            return {
+                ...state,
+                userNotes:[],
+            }
         }
     }
 })
 
-const { addNotes, deleteNotes } = notesSlice.actions;
+export const { addNotes, deleteNotesUser } = notesSlice.actions;
 
 export const startUploadUserNotes = (id,page) => {
     return async (dispatch) => {
