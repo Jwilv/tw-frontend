@@ -17,11 +17,7 @@ export const ProfileInfo = () => {
     } = useSelector(state => state.ProfileActive);
 
     const { profileId } = useParams();
-
-    const HOST = 'http://localhost:8080'
-
-    const URL_AVATAR = `${HOST}/getAvatar?id=${profileId}`;
-
+    const {_id} = useSelector( state => state.user)
 
     return (
         <div className='container-profileinfo'>
@@ -33,7 +29,7 @@ export const ProfileInfo = () => {
 
                     <div className="change">
                         {
-                            (true)
+                            (profileId === _id)
                                 ? <Link to={"/changeProfile"}><i className="fa-solid fa-user-pen" style={{ color: "#ffffff", }} /></Link>
                                 : <FollowUnfollowButton />
                         }
