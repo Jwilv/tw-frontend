@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router';
 import { FollowUnfollowButton } from './FollowUnfollowButton';
 import { Link } from 'react-router-dom';
+import { BannerProfile } from './BannerProfile';
 
 export const ProfileInfo = () => {
 
@@ -20,13 +21,11 @@ export const ProfileInfo = () => {
 
     const URL_AVATAR = `${HOST}/getAvatar?id=${profileId}`;
 
-    const URL_BANNER = `${HOST}/getBanner?id=${profileId}`;
-
 
     return (
         <div className='container-profileinfo'>
             <div className="profileinfo-user">
-
+                <BannerProfile id={profileId}/>
                 <div className="info">
 
                     <div className="img-profile">
@@ -38,8 +37,8 @@ export const ProfileInfo = () => {
                     <div className="change">
                         {
                             (true)
-                        ? <Link to={"/changeProfile"}><i className="fa-solid fa-user-pen" style={{color: "#ffffff",}} /></Link>
-                        : <FollowUnfollowButton />
+                                ? <Link to={"/changeProfile"}><i className="fa-solid fa-user-pen" style={{ color: "#ffffff", }} /></Link>
+                                : <FollowUnfollowButton />
                         }
                     </div>
 

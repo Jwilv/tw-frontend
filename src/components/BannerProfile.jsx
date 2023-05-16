@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export const BannerProfile = () => {
+export const BannerProfile = ({id}) => {
 
     const defaultBanner = "https://tse4.mm.bing.net/th?id=OIP.Gxnh2TWyj1hgynsiLbrh2AHaBm&pid=Api&P=0&h=180";
 
