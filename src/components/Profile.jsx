@@ -11,7 +11,7 @@ export const Profile = () => {
 
     const { userNotes } = useSelector(state => state.notes)
 
-    const {_id} = useSelector(state => state.user)
+    const {_id : id } = useSelector(state => state.user)
 
     return (
         <div className='profile-container'>
@@ -19,7 +19,7 @@ export const Profile = () => {
             <div className="notes-profile">
                 <div className='notes-profile-width'>
                     {
-                        (profileId === _id)
+                        (profileId === id)
                             ? <PostNote />
                             : <></>
                     }
