@@ -64,6 +64,7 @@ export const PostNote = () => {
             type="text"
             placeholder='que es lo que opinas ?'
             name='message'
+            autoComplete='off'
             value={message}
             onChange={changevalue}
           />
