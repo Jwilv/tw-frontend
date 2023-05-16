@@ -4,11 +4,11 @@ import { ImgProfileCard } from './ImgProfileCard'
 export const ProfileCard = ({ id, name, surname }) => {
 
     return (
-        <Link to={`/profile/${id}`} className='link'>
+        <Link to={`/profile/${id}`} className='link' >
 
             <div className='card-Profile'>
 
-<ImgProfileCard id={id}/>
+                <ImgProfileCard id={id} />
                 <strong>{name} {surname}</strong>
 
             </div>
