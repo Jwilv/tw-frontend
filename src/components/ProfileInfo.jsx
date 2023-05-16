@@ -26,12 +26,7 @@ export const ProfileInfo = () => {
     return (
         <div className='container-profileinfo'>
             <div className="profileinfo-user">
-                <div className="banner">
-                    <img src={URL_BANNER}
-                        alt="banner"
-                        className='banner-img'
-                    />
-                </div>
+
                 <div className="info">
 
                     <div className="img-profile">
