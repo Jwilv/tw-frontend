@@ -30,7 +30,7 @@ const profileSlice = createSlice({
     }
 })
 
-const { setProfileData, deleteProfileData } = profileSlice.actions;
+export const { setProfileData, deleteProfileData } = profileSlice.actions;
 
 export const startDataProfile = (id) => {
     return async (dispatch) => {

@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import { Profile } from '../components/Profile';
 import { NavbarLayout } from '../components/NavbarLayout';
 import { useDispatch } from 'react-redux';
-import { startDataProfile } from '../redux/profile.slice';
+import { deleteProfileData, startDataProfile } from '../redux/profile.slice';
 import {deleteNotesUser, startUploadUserNotes } from '../redux/notes.slice';
 export const ProfileScreen = () => {
 
@@ -15,6 +15,7 @@ export const ProfileScreen = () => {
         dispatch(startDataProfile(profileId))
         return () => {
             dispatch(deleteNotesUser())
+            dispatch(deleteProfileData())
         }
     }, [])
 
@@ -22,6 +23,7 @@ export const ProfileScreen = () => {
         dispatch(startUploadUserNotes(profileId, 1))
         return () => {
             dispatch(deleteNotesUser())
+            dispatch(deleteProfileData())
         }
     }, [])
 
