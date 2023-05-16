@@ -13,7 +13,6 @@ export const ProfileInfo = () => {
         surname,
         biography,
         location,
-        birthDate,
     } = useSelector(state => state.ProfileActive);
 
     const { profileId } = useParams();
@@ -49,12 +48,6 @@ export const ProfileInfo = () => {
 
                         <div className="bio-profile">
 
-                            {
-                                (birthDate)
-                                    ?
-                                    <p className='date'><i className="fa-solid fa-calendar" style={{ color: "#ffffff", }} />{birthDate}</p>
-                                    : null
-                            }
                             <p>{biography}</p>
                         </div>
 
