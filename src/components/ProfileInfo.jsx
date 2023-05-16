@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import { FollowUnfollowButton } from './FollowUnfollowButton';
 import { Link } from 'react-router-dom';
 import { BannerProfile } from './BannerProfile';
+import { AvatarProfile } from './AvatarProfile';
 
 export const ProfileInfo = () => {
 
@@ -25,14 +26,10 @@ export const ProfileInfo = () => {
     return (
         <div className='container-profileinfo'>
             <div className="profileinfo-user">
-                <BannerProfile id={profileId}/>
+                <BannerProfile id={profileId} />
                 <div className="info">
 
-                    <div className="img-profile">
-                        <img src={URL_AVATAR}
-                            alt="avatar"
-                        />
-                    </div>
+                    <AvatarProfile id={profileId}/>
 
                     <div className="change">
                         {
