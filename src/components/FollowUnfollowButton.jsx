@@ -8,8 +8,8 @@ export const FollowUnfollowButton = () => {
         <div>
             {
                 (buttonFollow)
-                    ? <button className='button-profile follow'>Follow</button>
-                    : <button className='button-profile unfollow'>Unfollow</button>
+                    ? <button className='button-profile unfollow'>Unfollow</button>
+                    : <button className='button-profile follow'>Follow</button>
             }
         </div>
     )
