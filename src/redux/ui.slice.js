@@ -66,10 +66,10 @@ export const startDatafollow = (id) => {
 export const startDeleteRelation = (id) => {
     return async (dispatch) => {
         try {
-            await fetchToken(`deleteRelation?id=${id}`)
-            .then( ()=> { dispatch(setButtonFollow(false)) })
+            await fetchToken(`deleteRelation?id=${id}`, null, "DELETE")
+                .then(() => { dispatch(setButtonFollow(false)) })
         } catch (error) {
-
+            console.error(error)
         }
     }
 }
