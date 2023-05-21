@@ -63,4 +63,15 @@ export const startDatafollow = (id) => {
     }
 }
 
+export const startDeleteRelation = (id) => {
+    return async (dispatch) => {
+        try {
+            await fetchToken(`deleteRelation?id=${id}`)
+            .then( ()=> { dispatch(setButtonFollow(false)) })
+        } catch (error) {
+
+        }
+    }
+}
+
 export default uiSlice.reducer;
