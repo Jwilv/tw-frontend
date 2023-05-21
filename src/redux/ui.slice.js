@@ -4,9 +4,9 @@ import { fetchToken } from "../helpers/fecht";
 const initialState = {
     suggestions: false,
     home: true,
-    follow:true,
-    new:false,
-    buttonFollow : false,
+    follow: true,
+    new: false,
+    buttonFollow: false,
 }
 const uiSlice = createSlice({
     name: "ui",
@@ -26,18 +26,24 @@ const uiSlice = createSlice({
                 home: false,
             }
         },
-        openFollow : (state)=>{
-            return{
+        openFollow: (state) => {
+            return {
                 ...state,
-                follow:true,
-                new:false,
+                follow: true,
+                new: false,
             }
         },
-        openNew: (state)=>{
-            return{
+        openNew: (state) => {
+            return {
                 ...state,
-                follow:false,
-                new:true,
+                follow: false,
+                new: true,
+            }
+        },
+        setButtonFollow: (state, action) => {
+            return {
+                ...state,
+                buttonFollow : action.payload,
             }
         }
     }
@@ -45,15 +51,15 @@ const uiSlice = createSlice({
 
 export const { openMenu, openSuggestions, openFollow, openNew } = uiSlice.actions
 
-export const startDatafollow = (id)=>{
+export const startDatafollow = (id) => {
 
-    return async(dispatch)=>{
+    return async (dispatch) => {
         try {
             fetchToken(`checkRelation?id=${id}`)
-            .then( ()=>{ dispatch() })
-            .catch( ()=>{ dispatch() })
+                .then(() => { dispatch() })
+                .catch(() => { dispatch() })
         } catch (error) {
-            
+
         }
     }
 }
