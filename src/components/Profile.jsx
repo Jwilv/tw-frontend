@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NotesUser } from './NotesUser'
 import { PostNote } from './PostNote'
 import { ProfileInfo } from './ProfileInfo'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router'
+import { startDatafollow } from '../redux/ui.slice'
 
 export const Profile = () => {
 
+    const dispatch = useDispatch()
+
     const { profileId } = useParams();
+
+    useEffect(() => {
+        dispatch(startDatafollow(profileId))
+    }, [])
+    
 
     const { userNotes } = useSelector(state => state.notes)
 
