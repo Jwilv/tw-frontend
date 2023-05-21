@@ -43,23 +43,22 @@ const uiSlice = createSlice({
         setButtonFollow: (state, action) => {
             return {
                 ...state,
-                buttonFollow : action.payload,
+                buttonFollow: action.payload,
             }
         }
     }
 })
 
-export const { openMenu, openSuggestions, openFollow, openNew } = uiSlice.actions
+export const { openMenu, openSuggestions, openFollow, openNew, setButtonFollow } = uiSlice.actions
 
 export const startDatafollow = (id) => {
 
     return async (dispatch) => {
         try {
-            fetchToken(`checkRelation?id=${id}`)
-                .then(() => { dispatch() })
-                .catch(() => { dispatch() })
+            const resp = await fetchToken(`checkRelation?id=${id}`)
+            dispatch(setButtonFollow(resp.Status))
         } catch (error) {
-
+            console.log(error)
         }
     }
 }
