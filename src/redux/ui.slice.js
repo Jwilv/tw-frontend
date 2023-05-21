@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { fetchToken } from "../helpers/fecht";
 
 const initialState = {
     suggestions: false,
     home: true,
     follow:true,
     new:false,
+    buttonFollow : false,
 }
 const uiSlice = createSlice({
     name: "ui",
@@ -42,5 +44,18 @@ const uiSlice = createSlice({
 })
 
 export const { openMenu, openSuggestions, openFollow, openNew } = uiSlice.actions
+
+export const startDatafollow = (id)=>{
+
+    return async(dispatch)=>{
+        try {
+            fetchToken(`checkRelation?id=${id}`)
+            .then( ()=>{ dispatch() })
+            .catch( ()=>{ dispatch() })
+        } catch (error) {
+            
+        }
+    }
+}
 
 export default uiSlice.reducer;
