@@ -1,18 +1,30 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import querystring from 'query-string'
 import { BarSelectionSearch } from './BarSelectionSearch'
 import { SearchsProfiles } from './SearchsProfiles'
 import { useLocation, useNavigate } from 'react-router'
 import { useForm } from '../hooks/useForm'
+import { useDispatch, useSelector } from 'react-redux'
+import { startAddUsersInList } from '../redux/listUsers.slice'
 
 export const SearchMenu = () => {
 
     const location = useLocation()
 
+    const dispatch = useDispatch()
+
     const { q = '' } = useMemo(() => querystring.parse(location.search), [location.search])
 
     const [{ searchText }, handleInputChanGet] = useForm({ searchText: q })
 
+    const { follow } = useSelector(state => state.ui)
+
+    const type = follow ?  'follow' : 'new'
+
+    useEffect(() => {
+        dispatch(startAddUsersInList(1,type,q))
+    }, [follow,q])
+    
 
     const navigate = useNavigate();
 
