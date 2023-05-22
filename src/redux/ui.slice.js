@@ -77,4 +77,18 @@ export const startDeleteRelation = (id) => {
     }
 }
 
+export const startCreationRelation = (id) => {
+    return async (dispatch) => {
+        try {
+            const resp = await fetchToken(`checkRelation?id=${id}`)
+            if (!resp.Status) {
+                await fetchToken(`relationUsers?id=${id}`, null, "POST")
+                    .then(() => { dispatch(setButtonFollow(true)) })
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
+}
+
 export default uiSlice.reducer;
