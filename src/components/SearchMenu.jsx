@@ -1,16 +1,44 @@
-import React from 'react'
+import React, { useMemo } from 'react'
+import querystring from 'query-string'
 import { BarSelectionSearch } from './BarSelectionSearch'
 import { SearchsProfiles } from './SearchsProfiles'
+import { useLocation, useNavigate } from 'react-router'
+import { useForm } from '../hooks/useForm'
 
 export const SearchMenu = () => {
+
+    const location = useLocation()
+
+    const { q = '' } = useMemo(() => querystring.parse(location.search), [location.search])
+
+    const [{ searchText }, handleInputChanGet] = useForm({ searchText: q })
+
+
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        navigate(`?q=${searchText}`)
+
+    }
+
     return (
         <div className='container-SearchUsers'>
             <div className="container-search-input">
 
                 <div className="input-search">
-                    <form className="form">
+                    <form className="form" onSubmit={handleSubmit}>
                         <label htmlFor="search">
-                            <input className="input" type="text" required="" placeholder="Search" id="search" />
+                            <input 
+                            className="input" 
+                            type="text" 
+                            required="" 
+                            placeholder="Search" 
+                            id="search"
+                            name='searchText'
+                            value={searchText}
+                            onChange={handleInputChanGet}
+                            />
                             <div className="fancy-bg"></div>
                             <div className="search">
                                 <svg viewBox="0 0 24 24" aria-hidden="true" className="r-14j79pv r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-4wgw6l r-f727ji r-bnwqim r-1plcrui r-lrvibr">
