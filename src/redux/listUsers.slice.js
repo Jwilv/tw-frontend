@@ -4,6 +4,7 @@ import { fetchToken } from "../helpers/fecht";
 
 const initialState = {
     searchUsers: [],
+    recommended:[],
 };
 
 const listUsersSlice = createSlice({
@@ -22,10 +23,16 @@ const listUsersSlice = createSlice({
                 searchUsers:[],
             }
         },
+        addRecommended : (state, action)=>{
+            return{
+                ...state,
+                recommended : [...action.payload],
+            }
+        },
     }
 });
 
-const {addSearchUsers, deleteSearchUsers} = listUsersSlice.actions;
+const {addSearchUsers, deleteSearchUsers, addRecommended} = listUsersSlice.actions;
 
 export const startAddUsersInList = (page = 1, type = 'new',search = '')=>{
     return async(dispatch, getState)=>{
