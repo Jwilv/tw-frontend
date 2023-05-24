@@ -4,6 +4,7 @@ import { MenuNotes } from "./MenuNotes"
 import { MenuRight } from "../components/MenuRight"
 import { useDispatch } from "react-redux"
 import { startUserData } from "../redux/user.slice"
+import { startAddRecommendedUsers } from "../redux/listUsers.slice"
 
 export const HomePage = () => {
 
@@ -11,6 +12,7 @@ export const HomePage = () => {
 
     useEffect(() => {
         dispatch(startUserData())
+        dispatch(startAddRecommendedUsers())
     }, [])
     
     return (
