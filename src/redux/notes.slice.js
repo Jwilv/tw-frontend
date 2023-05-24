@@ -23,6 +23,12 @@ const notesSlice = createSlice({
                 ...state,
                 userNotes:[],
             }
+        },
+        addNotesRecommended:(state, action)=>{
+            return{
+                ...state,
+                recommended:[...action.payload]
+            }
         }
     }
 })
