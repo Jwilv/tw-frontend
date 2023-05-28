@@ -5,7 +5,9 @@ import { useSelector } from 'react-redux'
 
 export const MenuRight = () => {
 
-    const {recommended} = useSelector( state => state.notes)
+    const {recommended : recommendedNotes} = useSelector( state => state.notes)
+    const {recommended : recommendedUsers} = useSelector( state => state.listUsers)
+
 
     return (
 
@@ -17,7 +19,7 @@ export const MenuRight = () => {
                 <div className='menu-container-right-items-notes'>
                     <div className='menu-container-right-notes'>
                         {
-                            recommended.map( (notes) => {
+                            recommendedNotes.map( (notes) => {
                                 return <NotesUser key={notes._id} {...notes} />
                             })
                         }
@@ -28,10 +30,11 @@ export const MenuRight = () => {
 
             <div className='menu-container-right-items-user'>
                 <p className="menu-container-right-title"> Usuarios recomendados: </p>
-                <UserRecommended />
-                <UserRecommended />
-                <UserRecommended />
-                <UserRecommended />
+                {
+                    recommendedUsers.map( user => {
+                        return <UserRecommended key={user.id} {...user}/>
+                    })
+                }
             </div>
             
         </div>
