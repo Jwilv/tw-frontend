@@ -45,7 +45,7 @@ const notesSlice = createSlice({
     }
 })
 
-export const { addNotes, deleteNotesUser, addNotesRecommended } = notesSlice.actions;
+export const { addNotes, deleteNotesUser, addNotesRecommended, addNotesMenu } = notesSlice.actions;
 
 export const startUploadUserNotes = (id, page) => {
     return async (dispatch) => {
@@ -76,6 +76,13 @@ export const startAddNotesRecommended = () => {
             .then(data => {
                 dispatch(addNotesRecommended(data))
             })
+    }
+}
+
+export const startAddNotes = (page)=>{
+    return async (dispatch)=>{
+        await fetchToken(`notesFollow?page=${page}`)
+        .then( data => { dispatch(addNotesMenu(data))})
     }
 }
 
