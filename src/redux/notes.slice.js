@@ -21,55 +21,61 @@ const notesSlice = createSlice({
         deleteNotesUser: (state) => {
             return {
                 ...state,
-                userNotes:[],
+                userNotes: [],
             }
         },
-        addNotesRecommended:(state, action)=>{
-            return{
+        addNotesRecommended: (state, action) => {
+            return {
                 ...state,
-                recommended:[...action.payload]
+                recommended: [...action.payload]
             }
         },
-        deleteNotesRecommended:( state )=>{
-            return{
+        deleteNotesRecommended: (state) => {
+            return {
                 ...state,
-                recommended:[]
+                recommended: []
+            }
+        },
+        addNotesMenu: (state, action) => {
+            return {
+                ...state,
+                notes: [...action.payload]
             }
         }
     }
 })
 
-export const { addNotes, deleteNotesUser, addNotesRecommended} = notesSlice.actions;
+export const { addNotes, deleteNotesUser, addNotesRecommended } = notesSlice.actions;
 
-export const startUploadUserNotes = (id,page) => {
+export const startUploadUserNotes = (id, page) => {
     return async (dispatch) => {
         console.log("estoy aca")
         try {
             const res = await fetchToken(`getNotes?id=${id}&page=${page}`)
             console.log(res)
-            dispatch(addNotes({userNotes : [...res]}))
+            dispatch(addNotes({ userNotes: [...res] }))
         } catch (error) {
 
         }
     }
 }
 
-export const startPostNote = (payload)=>{
-    return async(dispatch,state)=>{
- try {
-    await fetchToken("saveNote",payload,"POST")
- } catch (error) {
-    
- }
+export const startPostNote = (payload) => {
+    return async (dispatch, state) => {
+        try {
+            await fetchToken("saveNote", payload, "POST")
+        } catch (error) {
+
+        }
     }
 }
 
-export const startAddNotesRecommended = ()=>{
-    return async(dispatch)=>{
+export const startAddNotesRecommended = () => {
+    return async (dispatch) => {
         await fetchToken("notesrandom")
-        .then( data =>{
-            dispatch(addNotesRecommended(data))
-        })
+            .then(data => {
+                dispatch(addNotesRecommended(data))
+            })
     }
 }
 
