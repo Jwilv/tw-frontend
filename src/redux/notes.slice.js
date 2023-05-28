@@ -29,6 +29,12 @@ const notesSlice = createSlice({
                 ...state,
                 recommended:[...action.payload]
             }
+        },
+        deleteNotesRecommended:( state )=>{
+            return{
+                ...state,
+                recommended:[]
+            }
         }
     }
 })
