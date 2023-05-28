@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { openMenu, openSuggestions } from '../redux/ui.slice';
+import { startAddNotes } from '../redux/notes.slice';
 
 export const Choice = () => {
   const dispatch = useDispatch();
 
   const { suggestions, home}  = useSelector( state => state.ui)
+
+  useEffect(() => {
+    dispatch(startAddNotes(1))
+  }, [home])
+  
 
   const handleHome = () => {
     dispatch(openMenu());

@@ -6,16 +6,24 @@ import { useSelector } from 'react-redux'
 
 export const MenuNotes = () => {
 
-    const {notes} = useSelector( state => state.notes)
+    const { notes } = useSelector(state => state.notes)
+    const { home } = useSelector(state => state.ui)
+
     return (
         <>
             <Choice />
             <div className='MenuNotes-container'>
                 <PostNote />
                 {
-                    notes.map( notes => {
-                        return <NotesUser key={notes._id} userId={notes.userRelationId} message={notes.Note.message}/>
-                    })
+
+                    (home)
+                        ? notes.map(notes => {
+                            return <NotesUser key={notes._id} userId={notes.userRelationId} {...notes.Note} />
+                        })
+                        : notes.map(notes => {
+                            return <NotesUser key={notes._id} {...notes} />
+
+                        })
                 }
             </div>
         </>

@@ -41,11 +41,17 @@ const notesSlice = createSlice({
                 ...state,
                 notes: [...action.payload]
             }
+        },
+        deleteNotesMenu: (state) => {
+            return {
+                ...state,
+                notes: []
+            }
         }
     }
 })
 
-export const { addNotes, deleteNotesUser, addNotesRecommended, addNotesMenu } = notesSlice.actions;
+export const { addNotes, deleteNotesUser, addNotesRecommended, addNotesMenu, deleteNotesMenu } = notesSlice.actions;
 
 export const startUploadUserNotes = (id, page) => {
     return async (dispatch) => {
@@ -79,10 +85,20 @@ export const startAddNotesRecommended = () => {
     }
 }
 
-export const startAddNotes = (page)=>{
-    return async (dispatch)=>{
-        await fetchToken(`notesFollow?page=${page}`)
-        .then( data => { dispatch(addNotesMenu(data))})
+export const startAddNotes = (page) => {
+    return async (dispatch, getState) => {
+
+        const { home } = getState().ui
+
+        if (home) {
+            dispatch(deleteNotesMenu())
+            await fetchToken(`notesFollow?page=${page}`)
+                .then(data => { dispatch(addNotesMenu(data)) })
+        } else {
+            dispatch(deleteNotesMenu())
+            await fetchToken(`suggestions`)
+                .then(data => { dispatch(addNotesMenu(data)) })
+        }
     }
 }
 
