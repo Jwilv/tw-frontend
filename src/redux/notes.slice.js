@@ -33,7 +33,7 @@ const notesSlice = createSlice({
     }
 })
 
-export const { addNotes, deleteNotesUser } = notesSlice.actions;
+export const { addNotes, deleteNotesUser, addNotesRecommended} = notesSlice.actions;
 
 export const startUploadUserNotes = (id,page) => {
     return async (dispatch) => {
@@ -55,6 +55,15 @@ export const startPostNote = (payload)=>{
  } catch (error) {
     
  }
+    }
+}
+
+export const startAddNotesRecommended = ()=>{
+    return async(dispatch)=>{
+        await fetchToken("notesrandom")
+        .then( data =>{
+            dispatch(addNotesRecommended(data))
+        })
     }
 }
 
